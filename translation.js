@@ -3,7 +3,7 @@
    ══════════════════════════════════════════════ */
 
 // Ton token (à garder secret après test)
-const HF_TOKEN = "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"; 
+
 const MODEL_ID = "facebook/mbart-large-50-many-to-many-mmt";
 
 console.log("Système de traduction chargé et prêt.");
