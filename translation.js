@@ -1,14 +1,14 @@
 /* ══════════════════════════════════════════════
-   SYSTEME DE TRADUCTION - MODE SECURISE (NETLIFY)
+   TRANSLATION SYSTEM - SECURE MODE (NETLIFY)
    ══════════════════════════════════════════════ */
 
-console.log("Système de traduction via Netlify Functions prêt.");
+console.log("Translation system via Netlify Functions ready.");
 
 document.addEventListener('mouseup', async (e) => {
     const selection = window.getSelection();
     const selectedText = selection.toString().trim();
 
-    // Cache la bulle si on clique ailleurs ou si la sélection est vide
+    // Hide the bubble if the user clicks elsewhere or if the selection is empty
     const overlay = document.getElementById('translation-overlay');
     if (selectedText.length === 0) {
         if (overlay && !overlay.contains(e.target)) {
@@ -17,13 +17,13 @@ document.addEventListener('mouseup', async (e) => {
         return;
     }
 
-    // On lance la traduction si le texte est assez long
+    // Trigger translation only if the selected text is long enough
     if (selectedText.length > 5) {
-        console.log("Sélection détectée :", selectedText);
-        showTranslationTooltip(selection, "Réveil de l'IA...");
+        console.log("Selection detected:", selectedText);
+        showTranslationTooltip(selection, "Translation...");
         
         try {
-            // APPEL PRO : On contacte TA fonction Netlify, pas Hugging Face en direct
+            // PRO CALL: We contact YOUR Netlify function, not Hugging Face directly
             const response = await fetch("/.netlify/functions/translate", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -31,24 +31,24 @@ document.addEventListener('mouseup', async (e) => {
             });
 
             const result = await response.json();
-            console.log("Retour du serveur Netlify :", result);
+            console.log("Response from Netlify server:", result);
 
-            // Gestion de la réponse (Hugging Face renvoie souvent un tableau)
+            // Handle the response (Hugging Face often returns an array)
             if (Array.isArray(result) && result[0].translation_text) {
                 showTranslationTooltip(selection, result[0].translation_text);
             } else if (result.error) {
-                showTranslationTooltip(selection, "L'IA charge... réessayez.");
+                showTranslationTooltip(selection, "Almost there...");
             } else {
-                showTranslationTooltip(selection, "Erreur format réponse.");
+                showTranslationTooltip(selection, "Response format error.");
             }
         } catch (err) {
-            console.error("Erreur Fetch :", err);
-            showTranslationTooltip(selection, "Erreur de connexion serveur.");
+            console.error("Fetch error:", err);
+            showTranslationTooltip(selection, "Server connection error.");
         }
     }
 });
 
-// Ta fonction d'affichage (Tooltip) reste identique mais nettoyée
+// Tooltip display function — unchanged but cleaned up
 function showTranslationTooltip(selection, text) {
     let display = document.getElementById('translation-overlay');
     if (!display) {
@@ -63,7 +63,7 @@ function showTranslationTooltip(selection, text) {
     display.textContent = text;
     display.style.display = 'block';
     
-    // Positionnement précis
+    // Precise positioning
     display.style.left = (rect.left + window.scrollX) + "px";
     display.style.top = (rect.bottom + window.scrollY + 10) + "px";
 }
