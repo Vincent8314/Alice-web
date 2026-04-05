@@ -3,7 +3,8 @@ exports.handler = async (event) => {
     const { text } = JSON.parse(event.body);
     const apiToken = process.env.HF_TOKEN; // Netlify ira chercher ton token tout seul ici
 
-    const response = await fetch("https://api-inference.huggingface.co/models/Helsinki-NLP/opus-mt-en-fr", {
+
+    const response = await fetch("https://router.huggingface.co/hf-inference/models/Helsinki-NLP/opus-mt-en-fr", {
       headers: { 
         "Authorization": `Bearer ${apiToken}`,
         "Content-Type": "application/json" 
