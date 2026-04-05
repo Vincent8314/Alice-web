@@ -1,0 +1,1479 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alice In Wonderland - Lewis Carroll</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════
+       HAMBURGER
+  ═══════════════════════════════════════ -->
+  <button id="menu-toggle" aria-label="Toggle menu">☰ menu</button>
+  <div id="backdrop"></div>
+
+  <!-- ══════════════════════════════════════
+       SIDEBAR
+  ═══════════════════════════════════════ -->
+  <aside id="sidebar">
+    <span class="site-title">Alice In Wonderland</span>
+    <button id="theme-toggle" aria-label="Toggle theme">◑ parchment</button>
+
+    <!-- TABS -->
+    <div id="sidebar-tabs">
+      <button class="tab-btn active" data-tab="chapters">chapters</button>
+      <button class="tab-btn" data-tab="legend">legend</button>
+    </div>
+
+    <!-- CHAPTERS PANEL -->
+    <div id="tab-chapters" class="tab-panel active">
+      <nav aria-label="Book navigation">
+        <ul>
+          <li><a href="#cover">Cover</a></li>
+
+          <li><a href="#authors-note">Author's Note</a></li>
+          <li><a href="#copyright">Copyright</a></li>
+          <li><a href="#toc">Contents</a></li><br>
+
+          <li><a href="#ch1">Ch. 1 — Down the Rabbit-Hole</a></li>
+          <li><a href="#ch2">Ch. 2 — The Pool of Tears</a></li>
+          <li><a href="#ch3">Ch. 3 — A Caucus-Race and a Long Tale</a></li>
+          <li><a href="#ch4">Ch. 4 — The Rabbit Sends in a Little Bill</a></li>
+          <li><a href="#ch5">Ch. 5 — Advice from a Caterpillar</a></li>
+          <li><a href="#ch6">Ch. 6 — Pig an Pepper</a></li>
+          <li><a href="#ch7">Ch. 7 — A Mad Tea-Party</a></li>
+          <li><a href="#ch8">Ch. 8 — The Queen's Croquet-Ground</a></li>
+          <li><a href="#ch9">Ch. 9 — The Mock Turtle's Story</a></li>
+          <li><a href="#ch10">Ch. 10 — The Lobster Quadrille</a></li>
+          <li><a href="#ch11">Ch. 11 — Who Stole the Tarts?</a></li>
+          <li><a href="#ch12">Ch. 12 — Alice's Evidence</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- LEGEND PANEL -->
+    <div id="tab-legend" class="tab-panel">
+      <div class="legend-list">
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#67E8F9"></span>
+          <span class="legend-name">Noun</span>
+          <span class="legend-example" style="color: #67E8F9">dog, house, love</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#67E8F9"></span>
+          <span class="legend-name">Proper Noun</span>
+          <span class="legend-example" style="color:#67E8F9; font-weight:600;">Alice, London</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#F9A8D4"></span>
+          <span class="legend-name">Verb</span>
+          <span class="legend-example" style="color:#F9A8D4; font-weight:600">run, think, go</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#F9A8D4"></span>
+          <span class="legend-name">Auxiliary Verb</span>
+          <span class="legend-example" style="color:#F9A8D4">was, had, is</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#86EFAC"></span>
+          <span class="legend-name">Adjective</span>
+          <span class="legend-example" style="color:#86EFAC">happy, big, red</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FDBA74"></span>
+          <span class="legend-name">Adverb</span>
+          <span class="legend-example" style="color:#FDBA74">quickly, very</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FCA5A5"></span>
+          <span class="legend-name">Pronoun</span>
+          <span class="legend-example" style="color:#FCA5A5; font-weight: 600;">I, you, she, it</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FDE047"></span>
+          <span class="legend-name">Determiner</span>
+          <span class="legend-example" style="color:#FDE047">a, the, this</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#D8B4FE"></span>
+          <span class="legend-name">Adposition</span>
+          <span class="legend-example" style="color:#D8B4FE">in, at, to, of</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#A5B4FC"></span>
+          <span class="legend-name">Coord. Conj.</span>
+          <span class="legend-example" style="color:#A5B4FC">and, but, or</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#A5B4FC"></span>
+          <span class="legend-name">Sub. Conj.</span>
+          <span class="legend-example" style="color:#A5B4FC">because, if</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FDA4AF"></span>
+          <span class="legend-name">Particle</span>
+          <span class="legend-example" style="color:#FDA4AF;">to, not, up</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#93C5FD"></span>
+          <span class="legend-name">Interjection</span>
+          <span class="legend-example" style="color: #93C5FD">oh, wow, hey</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#BEF264"></span>
+          <span class="legend-name">Number</span>
+          <span class="legend-example" style="color: #BEF264">1, 2, one, two</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background: #D1D5DB; opacity: 0.9;"></span>
+          <span class="legend-name">Punctuation</span>
+          <span class="legend-example" style="color: #D1D5DB; opacity: 0.9;>. , ! ? :</span>
+        </div>
+        <div class=" legend-item">
+            <span class="legend-swatch" style="background: #D1D5DB; opacity: 0.9;"></span>
+            <span class="legend-name">Symbol</span>
+            <span class="legend-example" style="color: #D1D5DB; opacity: 0.9;">$ % & @</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background: #D1D5DB; opacity: 0.9;; opacity:0.9"></span>
+          <span class="legend-name">Other / Unknown</span>
+          <span class="legend-example" style="color: #D1D5DB; opacity: 0.9;">— </span>
+        </div>
+        <!-- <div class="legend-item">
+          <span class="legend-swatch" style="background:#4DC0FF"></span>
+          <span class="legend-name">Noun</span>
+          <span class="legend-example" style="color:#4DC0FF">dog, house, love</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#4DC0FF"></span>
+          <span class="legend-name">Proper Noun</span>
+          <span class="legend-example" style="color:#4DC0FF; font-weight:900; font-style:oblique">Alice, London</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FF4FD8"></span>
+          <span class="legend-name">Verb</span>
+          <span class="legend-example" style="color:#FF4FD8; font-weight:600">run, think, go</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FF4FD8"></span>
+          <span class="legend-name">Auxiliary Verb</span>
+          <span class="legend-example" style="color:#FF4FD8">was, had, is</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#5FD35F"></span>
+          <span class="legend-name">Adjective</span>
+          <span class="legend-example" style="color:#5FD35F">happy, big, red</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#E67A23"></span>
+          <span class="legend-name">Adverb</span>
+          <span class="legend-example" style="color:#E67A23">quickly, very</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FF5D5C"></span>
+          <span class="legend-name">Pronoun</span>
+          <span class="legend-example" style="color:#FF5D5C">I, you, she, it</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#F1D76F"></span>
+          <span class="legend-name">Determiner</span>
+          <span class="legend-example" style="color:#F1D76F">a, the, this</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#B07CFF"></span>
+          <span class="legend-name">Adposition</span>
+          <span class="legend-example" style="color:#B07CFF">in, at, to, of</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#3A6ED5"></span>
+          <span class="legend-name">Coord. Conj.</span>
+          <span class="legend-example" style="color:#3A6ED5">and, but, or</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#3A6ED5"></span>
+          <span class="legend-name">Sub. Conj.</span>
+          <span class="legend-example" style="color:#3A6ED5; font-style:oblique">because, if</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#D8A63A"></span>
+          <span class="legend-name">Particle</span>
+          <span class="legend-example" style="color:#D8A63A; font-style:oblique">to, not, up</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#4DE0D2"></span>
+          <span class="legend-name">Interjection</span>
+          <span class="legend-example" style="color:#4DE0D2">oh, wow, hey</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#9BE564"></span>
+          <span class="legend-name">Number</span>
+          <span class="legend-example" style="color:#9BE564">1, 2, one, two</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#A0A0A0"></span>
+          <span class="legend-name">Punctuation</span>
+          <span class="legend-example" style="color:#A0A0A0">. , ! ? :</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#A0A0A0"></span>
+          <span class="legend-name">Symbol</span>
+          <span class="legend-example" style="color:#A0A0A0">$ % & @</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#e8dfc8; opacity:0.45"></span>
+          <span class="legend-name">Other / Unknown</span>
+          <span class="legend-example" style="color:#e8dfc8; opacity:0.45">—</span>
+        </div> -->
+
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ══════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════ -->
+  <main id="content">
+
+    <!-- ── COVER ── -->
+    <section id="cover" class="book-section">
+      <h1><span class="PROPN">Alice</span> <span class="PART">’s</span> <span class="PROPN">Adventures</span> <span
+          class="ADP">in</span> <span class="PROPN">Wonderland</span> </h1>
+      <p class="byline"><span class="ADP">by</span> <span class="PROPN">Lewis</span> <span class="PROPN">Carroll</span>
+      </p>
+    </section>
+
+    <!-- ── AUTHOR'S NOTE ── -->
+    <section id="authors-note" class="book-section">
+      <span class="section-label"><span class="NOUN">Author</span><span class="PUNCT">'</span><span
+          class="PART">s</span> <span class="NOUN">Note</span></span>
+      <h2><span class="DET">The</span> <span class="PROPN">Project</span> <span class="PROPN">Gutenberg</span> <span
+          class="PROPN">eBook</span> <span class="ADP">of</span> <span class="PROPN">Alice</span> <span
+          class="PART">'s</span> <span class="PROPN">Adventures</span> <span class="ADP">in</span> <span
+          class="PROPN">Wonderland</span></h2>
+
+      <p>
+        
+      </p>
+      <!-- <div class="page-break"><span class="page-num"></span></div> -->
+      <!-- page 1 -->
+      <!-- ── COPYRIGHT ── -->
+      <section id="copyright" class="book-section">
+        <p> <span class="NOUN">Title</span><span class="PUNCT">:</span> <span class="PROPN">Alice</span> <span
+            class="PART">'s</span> <span class="PROPN">Adventures</span> <span class="ADP">in</span> <span
+            class="PROPN">Wonderland</span></p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp; <span class="NOUN">Author</span><span class="PUNCT">:</span> <span
+            class="PROPN">Lewis</span> <span class="PROPN">Carroll</span> <br><br></p>
+        <p>
+          <span class="PROPN">Release</span> <span class="NOUN">date</span><span class="PUNCT">:</span> <span
+            class="PROPN">June</span> <span class="NUM">27</span><span class="PUNCT">,</span> <span
+            class="NUM">2008</span> <span class="PUNCT">[</span> <span class="NOUN">eBook</span> <span
+            class="NOUN">#</span> <span class="NUM">11</span> <span class="PUNCT">]</span> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="ADV">Most</span> <span class="ADV">recently</span>
+          <span class="VERB">updated</span><span class="PUNCT">:</span> <span class="PROPN">June</span> <span
+            class="NUM">26</span><span class="PUNCT">,</span> <span class="NUM">2025</span> <br>
+        </p>
+        <p> <span class="NOUN">Language</span><span class="PUNCT">:</span> <span class="ADJ">English</span></p>
+        <p> <span class="ADJ">Other</span> <span class="NOUN">information</span> <span class="CCONJ">and</span> <span
+            class="NOUN">formats</span><span class="PUNCT">:</span> <a href="https://www.gutenberg.org/ebooks/11"> <span
+              class="LINK" style="content: ;">www.gutenberg.org/ebooks/11</span></a></p>
+        <p><span class="NOUN">Credits</span><span class="PUNCT">:</span> <span class="PROPN">Arthur</span> <span
+            class="PROPN">DiBianca</span> <span class="CCONJ">and</span> <span class="PROPN">David</span> <span
+            class="PROPN">Widger</span> <br><br></p>
+        <p style="font-size: 1.5rem; text-align: center;">*** <span class="NOUN">START</span><span class="SPACE">
+          </span>
+          <span class="ADP">OF</span><span class="SPACE"> </span>
+          <span class="DET">THE</span><span class="SPACE"> </span>
+          <span class="NOUN">PROJECT</span><span class="SPACE"> </span>
+          <span class="PROPN">GUTENBERG</span><span class="SPACE"> </span>
+          <span class="NOUN">EBOOK</span><span class="SPACE"> </span>
+          <span class="PROPN">ALICE</span><span class="SPACE"> </span>
+          <span class="PUNCT">'</span><span class="PART">S</span><span class="SPACE"> </span>
+          <span class="NOUN">ADVENTURES</span><span class="SPACE"> </span>
+          <span class="ADP">IN</span><span class="SPACE"> </span>
+          <span class="PROPN">WONDERLAND</span> ***
+        </p>
+      </section>
+
+      <!-- ── TABLE OF CONTENTS ── -->
+      <section id="toc" class="book-section">
+        <h2><span class="NOUN">Contents</span></h2>
+
+        <div class="toc-entry">
+          <a href="#authors-note"><span class="NOUN">Author</span><span class="PUNCT">'</span><span
+              class="PART">s</span> <span class="NOUN">Note</span></a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">2</span></span>
+        </div>
+        <div class="toc-entry">
+          <a href="#copyright"><span class="NOUN">Copyright</span> </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">3</span></span>
+        </div>
+        <br>
+        <div class="toc-entry">
+          <a href="#ch1">
+            <span class="NOUN">Chapter</span> <span class="NUM">1</span><span class="PUNCT">:</span>
+            <span class="ADP">Down</span> <span class="DET">the</span>
+            <span class="PROPN">Rabbit</span><span class="PUNCT">-</span><span class="PROPN">Hole</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">8</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch2">
+            <span class="NOUN">Chapter</span> <span class="NUM">2</span><span class="PUNCT">:</span>
+            <span class="DET">The</span> <span class="PROPN">Pool</span>
+            <span class="ADP">fo</span> <span class="PROPN">Tears</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">14</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch3">
+            <span class="NOUN">Chapter</span> <span class="NUM">3</span><span class="PUNCT">:</span>
+            <span class="DET">A</span>
+            <span class="PROPN">Gaucus</span><span class="PUNCT">-</span><span class="PROPN">Race</span>
+            <span class="CCONJ">and</span> <span class="DET">a</span>
+            <span class="PROPN">Long</span> <span class="PROPN">Tale</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">20</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch4">
+            <span class="NOUN">Chapter</span> <span class="NUM">4</span><span class="PUNCT">:</span>
+            <span class="DET">The</span> <span class="PROPN">Rabbit</span>
+            <span class="VERB">Sends</span> <span class="ADP">in</span>
+            <span class="DET">a</span> <span class="PROPN">Little</span>
+            <span class="PROPN">Bill</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">27</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch5">
+            <span class="NOUN">Chapter</span> <span class="NUM">5</span><span class="PUNCT">:</span>
+            <span class="NOUN">Advice</span> <span class="ADP">from</span>
+            <span class="DET">a</span> <span class="PROPN">Caterpillar</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">34</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch6">
+            <span class="NOUN">Chapter</span> <span class="NUM">6</span><span class="PUNCT">:</span>
+            <span class="PROPN">Pig</span> <span class="CCONJ">and</span>
+            <span class="PROPN">Pepper</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">42</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch7">
+            <span class="NOUN">Chapter</span> <span class="NUM">7</span><span class="PUNCT">:</span>
+            <span class="DET">A</span> <span class="PROPN">Mad</span>
+            <span class="PROPN">Tea</span><span class="PUNCT">-</span><span class="PROPN">Party</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">50</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch8">
+            <span class="NOUN">Chapter</span> <span class="NUM">8</span><span class="PUNCT">:</span>
+            <span class="DET">The</span> <span class="PROPN">Queen</span>
+            <span class="PART">'s</span>
+            <span class="PROPN">Croquet</span><span class="PUNCT">-</span><span class="PROPN">Ground</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">58</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch9">
+            <span class="NOUN">Chapter</span> <span class="NUM">9</span><span class="PUNCT">:</span>
+            <span class="DET">The</span> <span class="PROPN">Mock</span>
+            <span class="PROPN">Turtle</span>
+            <span class="PART">'s</span>
+            <span class="PROPN">Story</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">66</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch10">
+            <span class="NOUN">Chapter</span> <span class="NUM">10</span><span class="PUNCT">:</span>
+            <span class="DET">The</span> <span class="PROPN">Lobster</span>
+            <span class="PROPN">Quadrille</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">74</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch11">
+            <span class="NOUN">Chapter</span> <span class="NUM">11</span><span class="PUNCT">:</span>
+            <span class="PRON">Who</span> <span class="VERB">Stole</span>
+            <span class="DET">the</span> <span class="PROPN">Tarts</span><span class="PUNCT">?</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">82</span></span>
+        </div>
+
+        <div class="toc-entry">
+          <a href="#ch12">
+            <span class="NOUN">Chapter</span> <span class="NUM">12</span><span class="PUNCT">:</span>
+            <span class="PROPN">Alice</span>
+            <span class="PART">'s</span>
+            <span class="PROPN">Evidence</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">89</span></span>
+        </div>
+      </section>
+
+      <!-- ── CHAPTER 1 ── -->
+      <section id="ch1" class="book-section">
+        <h4 class="section-label"><span class="PROPN">CHAPTER</span> <span class="NUM">I</span></h4>
+        <h2><span class="PROPN">Down</span> <span class="DET">the</span> <span class="PROPN">Rabbit</span><span
+            class="PUNCT">-</span><span class="PROPN">Hole</span></h2>
+        <p>
+          <span class="PROPN">Alice</span> <span class="AUX">was</span> <span class="VERB">beginning</span> <span
+            class="PART">to</span> <span class="VERB">get</span> <span class="ADV">very</span> <span
+            class="ADJ">tired</span> <span class="ADP">of</span> <span class="VERB">sitting</span> <span
+            class="ADP">by</span> <span class="PRON">her</span> <span class="NOUN">sister</span> <span
+            class="ADP">on</span> <span class="DET">the</span> <span class="NOUN">bank</span><span
+            class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="ADP">of</span> <span
+            class="VERB">having</span> <span class="PRON">nothing</span> <span class="PART">to</span> <span
+            class="VERB">do</span><span class="PUNCT">:</span> <span class="ADV">once</span> <span
+            class="CCONJ">or</span> <span class="ADV">twice</span> <span class="PRON">she</span> <span
+            class="AUX">had</span> <span class="VERB">peeped</span> <span class="ADP">into</span> <span
+            class="DET">the</span> <span class="NOUN">book</span> <span class="PRON">her</span> <span
+            class="NOUN">sister</span> <span class="AUX">was</span> <span class="VERB">reading</span><span
+            class="PUNCT">,</span> <span class="CCONJ">but</span> <span class="PRON">it</span> <span
+            class="VERB">had</span> <span class="DET">no</span> <span class="NOUN">pictures</span> <span
+            class="CCONJ">or</span> <span class="NOUN">conversations</span> <span class="ADP">in</span> <span
+            class="PRON">it</span><span class="PUNCT">,</span> <span class="PUNCT">“</span><span
+            class="CCONJ">and</span> <span class="PRON">what</span> <span class="AUX">is</span> <span
+            class="DET">the</span> <span class="NOUN">use</span> <span class="ADP">of</span> <span class="DET">a</span>
+          <span class="NOUN">book</span><span class="PUNCT">,</span><span class="PUNCT">”</span> <span
+            class="VERB">thought</span> <span class="PROPN">Alice</span> <span class="PUNCT">“</span><span
+            class="ADP">without</span> <span class="NOUN">pictures</span> <span class="CCONJ">or</span> <span
+            class="NOUN">conversations</span><span class="PUNCT">?</span><span class="PUNCT">”</span>
+        </p>
+        <p>
+          <span class="ADV">So</span> <span class="PRON">she</span> <span class="AUX">was</span> <span
+            class="VERB">considering</span> <span class="ADP">in</span> <span class="PRON">her</span> <span
+            class="ADJ">own</span> <span class="NOUN">mind</span> <span class="PUNCT">(</span><span
+            class="ADV">as</span> <span class="ADV">well</span> <span class="SCONJ">as</span> <span
+            class="PRON">she</span> <span class="AUX">could</span><span class="PUNCT">,</span> <span
+            class="ADP">for</span> <span class="DET">the</span> <span class="ADJ">hot</span> <span
+            class="NOUN">day</span> <span class="VERB">made</span> <span class="PRON">her</span> <span
+            class="VERB">feel</span> <span class="ADV">very</span> <span class="ADJ">sleepy</span> <span
+            class="CCONJ">and</span> <span class="ADJ">stupid</span><span class="PUNCT">)</span><span
+            class="PUNCT">,</span> <span class="SCONJ">whether</span> <span class="DET">the</span> <span
+            class="NOUN">pleasure</span> <span class="ADP">of</span> <span class="VERB">making</span> <span
+            class="DET">a</span> <span class="NOUN">daisy</span><span class="PUNCT">-</span><span
+            class="NOUN">chain</span> <span class="AUX">would</span> <span class="AUX">be</span> <span
+            class="ADJ">worth</span> <span class="DET">the</span> <span class="NOUN">trouble</span> <span
+            class="ADP">of</span> <span class="VERB">getting</span> <span class="ADP">up</span> <span
+            class="CCONJ">and</span> <span class="VERB">picking</span> <span class="DET">the</span> <span
+            class="NOUN">daisies</span><span class="PUNCT">,</span> <span class="SCONJ">when</span> <span
+            class="ADV">suddenly</span> <span class="DET">a</span> <span class="PROPN">White</span> <span
+            class="PROPN">Rabbit</span> <span class="ADP">with</span> <span class="ADJ">pink</span> <span
+            class="NOUN">eyes</span> <span class="VERB">ran</span> <span class="ADV">close</span> <span
+            class="ADP">by</span> <span class="PRON">her</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="PRON">There</span> <span class="VERB">was</span> <span class="PRON">nothing</span> <span
+            class="ADV">so</span> <span class="ADV">very</span> <span class="ADJ">remarkable</span> <span
+            class="ADP">in</span> <span class="PRON">that</span><span class="PUNCT">;</span> <span
+            class="CCONJ">nor</span> <span class="AUX">did</span> <span class="PROPN">Alice</span> <span
+            class="VERB">think</span> <span class="PRON">it</span> <span class="ADV">so</span> <span
+            class="ADV">very</span> <span class="ADV">much</span> <span class="ADP">out</span> <span
+            class="ADP">of</span> <span class="DET">the</span> <span class="NOUN">way</span> <span
+            class="PART">to</span> <span class="VERB">hear</span> <span class="DET">the</span> <span
+            class="PROPN">Rabbit</span> <span class="VERB">say</span> <span class="ADP">to</span> <span
+            class="PRON">itself</span><span class="PUNCT">,</span> <span class="PUNCT">“</span><span
+            class="INTJ">Oh</span> <span class="INTJ">dear</span><span class="PUNCT">!</span> <span
+            class="INTJ">Oh</span> <span class="INTJ">dear</span><span class="PUNCT">!</span> <span
+            class="PRON">I</span> <span class="AUX">shall</span> <span class="AUX">be</span> <span
+            class="ADJ">late</span><span class="PUNCT">!</span><span class="PUNCT">”</span> <span
+            class="PUNCT">(</span><span class="SCONJ">when</span> <span class="PRON">she</span> <span
+            class="VERB">thought</span> <span class="PRON">it</span> <span class="ADP">over</span> <span
+            class="ADV">afterwards</span><span class="PUNCT">,</span> <span class="PRON">it</span> <span
+            class="VERB">occurred</span> <span class="ADP">to</span> <span class="PRON">her</span> <span
+            class="SCONJ">that</span> <span class="PRON">she</span> <span class="AUX">ought</span> <span
+            class="PART">to</span> <span class="AUX">have</span> <span class="VERB">wondered</span> <span
+            class="ADP">at</span> <span class="PRON">this</span><span class="PUNCT">,</span> <span
+            class="CCONJ">but</span> <span class="ADP">at</span> <span class="DET">the</span> <span
+            class="NOUN">time</span> <span class="PRON">it</span> <span class="PRON">all</span> <span
+            class="VERB">seemed</span> <span class="ADV">quite</span> <span class="ADJ">natural</span><span
+            class="PUNCT">)</span><span class="PUNCT">;</span> <span class="CCONJ">but</span> <span
+            class="SCONJ">when</span> <span class="DET">the</span> <span class="PROPN">Rabbit</span> <span
+            class="ADV">actually</span> <span class="VERB">took</span> <span class="DET">a</span> <span
+            class="NOUN">watch</span> <span class="ADP">out</span> <span class="ADP">of</span> <span
+            class="PRON">its</span> <span class="NOUN">waistcoat</span><span class="PUNCT">-</span><span
+            class="NOUN">pocket</span><span class="PUNCT">,</span> <span class="CCONJ">and</span> <span
+            class="VERB">looked</span> <span class="ADP">at</span> <span class="PRON">it</span><span
+            class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="ADV">then</span> <span
+            class="VERB">hurried</span> <span class="ADP">on</span><span class="PUNCT">,</span> <span
+            class="PROPN">Alice</span> <span class="VERB">started</span> <span class="ADP">to</span> <span
+            class="PRON">her</span> <span class="NOUN">feet</span><span class="PUNCT">,</span> <span
+            class="SCONJ">for</span> <span class="PRON">it</span> <span class="VERB">flashed</span> <span
+            class="ADP">across</span> <span class="PRON">her</span> <span class="NOUN">mind</span> <span
+            class="SCONJ">that</span> <span class="PRON">she</span> <span class="AUX">had</span> <span
+            class="ADV">never</span> <span class="ADV">before</span> <span class="VERB">seen</span> <span
+            class="DET">a</span> <span class="NOUN">rabbit</span> <span class="ADP">with</span> <span
+            class="CCONJ">either</span> <span class="DET">a</span> <span class="NOUN">waistcoat</span><span
+            class="PUNCT">-</span><span class="NOUN">pocket</span><span class="PUNCT">,</span> <span
+            class="CCONJ">or</span> <span class="DET">a</span> <span class="NOUN">watch</span> <span
+            class="PART">to</span> <span class="VERB">take</span> <span class="ADP">out</span> <span
+            class="ADP">of</span> <span class="PRON">it</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="VERB">burning</span> <span class="ADP">with</span> <span
+            class="NOUN">curiosity</span><span class="PUNCT">,</span> <span class="PRON">she</span> <span
+            class="VERB">ran</span> <span class="ADP">across</span> <span class="DET">the</span> <span
+            class="NOUN">field</span> <span class="ADP">after</span> <span class="PRON">it</span><span
+            class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="ADV">fortunately</span> <span
+            class="AUX">was</span> <span class="ADV">just</span> <span class="ADP">in</span> <span
+            class="NOUN">time</span> <span class="PART">to</span> <span class="VERB">see</span> <span
+            class="PRON">it</span> <span class="VERB">pop</span> <span class="ADP">down</span> <span
+            class="DET">a</span> <span class="ADJ">large</span> <span class="NOUN">rabbit</span><span
+            class="PUNCT">-</span><span class="NOUN">hole</span> <span class="ADP">under</span> <span
+            class="DET">the</span> <span class="NOUN">hedge</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="ADP">In</span> <span class="DET">another</span> <span class="NOUN">moment</span> <span
+            class="ADV">down</span> <span class="VERB">went</span> <span class="PROPN">Alice</span> <span
+            class="ADP">after</span> <span class="PRON">it</span><span class="PUNCT">,</span> <span
+            class="ADV">never</span> <span class="ADV">once</span> <span class="VERB">considering</span> <span
+            class="SCONJ">how</span> <span class="ADP">in</span> <span class="DET">the</span> <span
+            class="NOUN">world</span> <span class="PRON">she</span> <span class="AUX">was</span> <span
+            class="PART">to</span> <span class="VERB">get</span> <span class="ADP">out</span> <span
+            class="ADV">again</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="DET">The</span> <span class="NOUN">rabbit</span><span class="PUNCT">-</span><span
+            class="NOUN">hole</span> <span class="VERB">went</span> <span class="ADV">straight</span> <span
+            class="ADV">on</span> <span class="ADP">like</span> <span class="DET">a</span> <span
+            class="NOUN">tunnel</span> <span class="ADP">for</span> <span class="DET">some</span> <span
+            class="NOUN">way</span><span class="PUNCT">,</span> <span class="CCONJ">and</span> <span
+            class="ADV">then</span> <span class="VERB">dipped</span> <span class="ADV">suddenly</span> <span
+            class="ADV">down</span><span class="PUNCT">,</span> <span class="ADV">so</span> <span
+            class="ADV">suddenly</span> <span class="SCONJ">that</span> <span class="PROPN">Alice</span> <span
+            class="VERB">had</span> <span class="PART">not</span> <span class="DET">a</span> <span
+            class="NOUN">moment</span> <span class="PART">to</span> <span class="VERB">think</span> <span
+            class="ADP">about</span> <span class="VERB">stopping</span> <span class="PRON">herself</span> <span
+            class="SCONJ">before</span> <span class="PRON">she</span> <span class="VERB">found</span> <span
+            class="PRON">herself</span> <span class="VERB">falling</span> <span class="ADP">down</span> <span
+            class="DET">a</span> <span class="ADV">very</span> <span class="ADJ">deep</span> <span
+            class="ADV">well</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="CCONJ">Either</span> <span class="DET">the</span> <span class="NOUN">well</span> <span
+            class="AUX">was</span> <span class="ADV">very</span> <span class="ADJ">deep</span><span
+            class="PUNCT">,</span> <span class="CCONJ">or</span> <span class="PRON">she</span> <span
+            class="VERB">fell</span> <span class="ADV">very</span> <span class="ADV">slowly</span><span
+            class="PUNCT">,</span> <span class="SCONJ">for</span> <span class="PRON">she</span> <span
+            class="VERB">had</span> <span class="NOUN">plenty</span> <span class="ADP">of</span> <span
+            class="NOUN">time</span> <span class="SCONJ">as</span> <span class="PRON">she</span> <span
+            class="VERB">went</span> <span class="ADP">down</span> <span class="PART">to</span> <span
+            class="VERB">look</span> <span class="ADP">about</span> <span class="PRON">her</span> <span
+            class="CCONJ">and</span> <span class="PART">to</span> <span class="VERB">wonder</span> <span
+            class="PRON">what</span> <span class="AUX">was</span> <span class="VERB">going</span> <span
+            class="PART">to</span> <span class="VERB">happen</span> <span class="ADV">next</span><span
+            class="PUNCT">.</span> <span class="ADV">First</span><span class="PUNCT">,</span> <span
+            class="PRON">she</span> <span class="VERB">tried</span> <span class="PART">to</span> <span
+            class="VERB">look</span> <span class="ADP">down</span> <span class="CCONJ">and</span> <span
+            class="VERB">make</span> <span class="ADP">out</span> <span class="PRON">what</span> <span
+            class="PRON">she</span> <span class="AUX">was</span> <span class="VERB">coming</span> <span
+            class="ADP">to</span><span class="PUNCT">,</span> <span class="CCONJ">but</span> <span
+            class="PRON">it</span> <span class="AUX">was</span> <span class="ADV">too</span> <span
+            class="ADJ">dark</span> <span class="PART">to</span> <span class="VERB">see</span> <span
+            class="PRON">anything</span><span class="PUNCT">;</span> <span class="ADV">then</span> <span
+            class="PRON">she</span> <span class="VERB">looked</span> <span class="ADP">at</span> <span
+            class="DET">the</span> <span class="NOUN">sides</span> <span class="ADP">of</span> <span
+            class="DET">the</span> <span class="NOUN">well</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="VERB">noticed</span> <span class="SCONJ">that</span> <span
+            class="PRON">they</span> <span class="AUX">were</span> <span class="VERB">filled</span> <span
+            class="ADP">with</span> <span class="NOUN">cupboards</span> <span class="CCONJ">and</span> <span
+            class="NOUN">book</span><span class="PUNCT">-</span><span class="NOUN">shelves</span><span
+            class="PUNCT">;</span> <span class="ADV">here</span> <span class="CCONJ">and</span> <span
+            class="ADV">there</span> <span class="PRON">she</span> <span class="VERB">saw</span> <span
+            class="NOUN">maps</span> <span class="CCONJ">and</span> <span class="NOUN">pictures</span> <span
+            class="VERB">hung</span> <span class="SCONJ">upon</span> <span class="NOUN">pegs</span><span
+            class="PUNCT">.</span> <span class="PRON">She</span> <span class="VERB">took</span> <span
+            class="ADP">down</span> <span class="DET">a</span> <span class="NOUN">jar</span> <span
+            class="ADP">from</span> <span class="NUM">one</span> <span class="ADP">of</span> <span
+            class="DET">the</span> <span class="NOUN">shelves</span> <span class="SCONJ">as</span> <span
+            class="PRON">she</span> <span class="VERB">passed</span><span class="PUNCT">;</span> <span
+            class="PRON">it</span> <span class="AUX">was</span> <span class="VERB">labelled</span> <span
+            class="PUNCT">“</span><span class="PROPN">ORANGE</span> <span class="PROPN">MARMALADE</span><span
+            class="PUNCT">”</span><span class="PUNCT">,</span> <span class="CCONJ">but</span> <span
+            class="ADP">to</span> <span class="PRON">her</span> <span class="ADJ">great</span> <span
+            class="NOUN">disappointment</span> <span class="PRON">it</span> <span class="AUX">was</span> <span
+            class="ADJ">empty</span><span class="PUNCT">:</span> <span class="PRON">she</span> <span
+            class="AUX">did</span> <span class="PART">not</span> <span class="VERB">like</span> <span
+            class="PART">to</span> <span class="VERB">drop</span> <span class="DET">the</span> <span
+            class="NOUN">jar</span> <span class="ADP">for</span> <span class="NOUN">fear</span> <span
+            class="ADP">of</span> <span class="VERB">killing</span> <span class="PRON">somebody</span> <span
+            class="ADV">underneath</span><span class="PUNCT">,</span> <span class="ADV">so</span> <span
+            class="VERB">managed</span> <span class="PART">to</span> <span class="VERB">put</span> <span
+            class="PRON">it</span> <span class="ADP">into</span> <span class="NUM">one</span> <span
+            class="ADP">of</span> <span class="DET">the</span> <span class="NOUN">cupboards</span> <span
+            class="SCONJ">as</span> <span class="PRON">she</span> <span class="VERB">fell</span> <span
+            class="ADP">past</span> <span class="PRON">it</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="PUNCT">“</span><span class="INTJ">Well</span><span class="PUNCT">!</span><span
+            class="PUNCT">”</span> <span class="VERB">thought</span> <span class="PROPN">Alice</span> <span
+            class="ADP">to</span> <span class="PRON">herself</span><span class="PUNCT">,</span> <span
+            class="PUNCT">“</span><span class="ADP">after</span> <span class="DET">such</span> <span
+            class="DET">a</span> <span class="NOUN">fall</span> <span class="ADP">as</span> <span
+            class="PRON">this</span><span class="PUNCT">,</span> <span class="PRON">I</span> <span
+            class="AUX">shall</span> <span class="VERB">think</span> <span class="PRON">nothing</span> <span
+            class="ADP">of</span> <span class="VERB">tumbling</span> <span class="ADP">down</span> <span
+            class="NOUN">stairs</span><span class="PUNCT">!</span> <span class="SCONJ">How</span> <span
+            class="ADJ">brave</span> <span class="PRON">they</span><span class="AUX">’ll</span> <span
+            class="ADV">all</span> <span class="VERB">think</span> <span class="PRON">me</span> <span
+            class="ADP">at</span> <span class="NOUN">home</span><span class="PUNCT">!</span> <span
+            class="SCONJ">Why</span><span class="PUNCT">,</span> <span class="PRON">I</span> <span
+            class="AUX">would</span><span class="ADV">n’t</span> <span class="VERB">say</span> <span
+            class="PRON">anything</span> <span class="ADP">about</span> <span class="PRON">it</span><span
+            class="PUNCT">,</span> <span class="ADV">even</span> <span class="SCONJ">if</span> <span
+            class="PRON">I</span> <span class="VERB">fell</span> <span class="ADP">off</span> <span
+            class="DET">the</span> <span class="NOUN">top</span> <span class="ADP">of</span> <span
+            class="DET">the</span> <span class="NOUN">house</span><span class="PUNCT">!</span><span
+            class="PUNCT">”</span> <span class="PUNCT">(</span><span class="PRON">Which</span> <span
+            class="AUX">was</span> <span class="ADV">very</span> <span class="ADJ">likely</span> <span
+            class="ADJ">true</span><span class="PUNCT">.</span><span class="PUNCT">)</span>
+        </p>
+        <p>
+          <span class="ADV">Down</span><span class="PUNCT">,</span> <span class="ADV">down</span><span
+            class="PUNCT">,</span> <span class="ADV">down</span><span class="PUNCT">.</span> <span
+            class="AUX">Would</span> <span class="DET">the</span> <span class="NOUN">fall</span> <span
+            class="ADV">never</span> <span class="VERB">come</span> <span class="ADP">to</span> <span
+            class="DET">an</span> <span class="NOUN">end</span><span class="PUNCT">?</span> <span
+            class="PUNCT">“</span><span class="PRON">I</span> <span class="VERB">wonder</span> <span
+            class="SCONJ">how</span> <span class="ADJ">many</span> <span class="NOUN">miles</span> <span
+            class="PRON">I</span><span class="PUNCT">’</span><span class="AUX">ve</span> <span
+            class="VERB">fallen</span> <span class="ADP">by</span> <span class="DET">this</span> <span
+            class="NOUN">time</span><span class="PUNCT">?</span><span class="PUNCT">”</span> <span
+            class="PRON">she</span> <span class="VERB">said</span> <span class="ADV">aloud</span><span
+            class="PUNCT">.</span> <span class="PUNCT">“</span><span class="PRON">I</span> <span class="AUX">must</span>
+          <span class="AUX">be</span> <span class="VERB">getting</span> <span class="ADV">somewhere</span> <span
+            class="ADP">near</span> <span class="DET">the</span> <span class="NOUN">centre</span> <span
+            class="ADP">of</span> <span class="DET">the</span> <span class="NOUN">earth</span><span
+            class="PUNCT">.</span> <span class="VERB">Let</span> <span class="PRON">me</span> <span
+            class="VERB">see</span><span class="PUNCT">:</span> <span class="PRON">that</span> <span
+            class="AUX">would</span> <span class="AUX">be</span> <span class="NUM">four</span> <span
+            class="NUM">thousand</span> <span class="NOUN">miles</span> <span class="ADV">down</span><span
+            class="PUNCT">,</span> <span class="PRON">I</span> <span class="VERB">think</span><span
+            class="PUNCT">—</span><span class="PUNCT">”</span> <span class="PUNCT">(</span><span
+            class="ADP">for</span><span class="PUNCT">,</span> <span class="PRON">you</span> <span
+            class="VERB">see</span><span class="PUNCT">,</span> <span class="PROPN">Alice</span> <span
+            class="AUX">had</span> <span class="VERB">learnt</span> <span class="ADJ">several</span> <span
+            class="NOUN">things</span> <span class="ADP">of</span> <span class="DET">this</span> <span
+            class="NOUN">sort</span> <span class="ADP">in</span> <span class="PRON">her</span> <span
+            class="NOUN">lessons</span> <span class="ADP">in</span> <span class="DET">the</span> <span
+            class="NOUN">schoolroom</span><span class="PUNCT">,</span> <span class="CCONJ">and</span> <span
+            class="SCONJ">though</span> <span class="PRON">this</span> <span class="AUX">was</span> <span
+            class="PART">not</span> <span class="DET">a</span> <span class="ADV">very</span> <span
+            class="ADJ">good</span> <span class="NOUN">opportunity</span> <span class="ADP">for</span> <span
+            class="VERB">showing</span> <span class="ADP">off</span> <span class="PRON">her</span> <span
+            class="NOUN">knowledge</span><span class="PUNCT">,</span> <span class="SCONJ">as</span> <span
+            class="PRON">there</span> <span class="VERB">was</span> <span class="DET">no</span> <span
+            class="NOUN">one</span> <span class="PART">to</span> <span class="VERB">listen</span> <span
+            class="ADP">to</span> <span class="PRON">her</span><span class="PUNCT">,</span> <span
+            class="ADV">still</span> <span class="PRON">it</span> <span class="AUX">was</span> <span
+            class="ADJ">good</span> <span class="NOUN">practice</span> <span class="PART">to</span> <span
+            class="VERB">say</span> <span class="PRON">it</span> <span class="ADP">over</span><span
+            class="PUNCT">)</span> <span class="PUNCT">“</span><span class="PUNCT">—</span><span
+            class="INTJ">yes</span><span class="PUNCT">,</span> <span class="PRON">that</span><span
+            class="AUX">’s</span> <span class="ADP">about</span> <span class="DET">the</span> <span
+            class="ADJ">right</span> <span class="NOUN">distance</span><span class="PUNCT">—</span><span
+            class="CCONJ">but</span> <span class="ADV">then</span> <span class="PRON">I</span> <span
+            class="VERB">wonder</span> <span class="PRON">what</span> <span class="PROPN">Latitude</span> <span
+            class="CCONJ">or</span> <span class="PROPN">Longitude</span> <span class="PRON">I</span><span
+            class="PUNCT">’</span><span class="AUX">ve</span> <span class="VERB">got</span> <span
+            class="PART">to</span><span class="PUNCT">?</span><span class="PUNCT">”</span> <span
+            class="PUNCT">(</span><span class="PROPN">Alice</span> <span class="VERB">had</span> <span
+            class="DET">no</span> <span class="NOUN">idea</span> <span class="PRON">what</span> <span
+            class="PROPN">Latitude</span> <span class="AUX">was</span><span class="PUNCT">,</span> <span
+            class="CCONJ">or</span> <span class="PROPN">Longitude</span> <span class="ADV">either</span><span
+            class="PUNCT">,</span> <span class="CCONJ">but</span> <span class="VERB">thought</span> <span
+            class="PRON">they</span> <span class="AUX">were</span> <span class="ADJ">nice</span> <span
+            class="ADJ">grand</span> <span class="NOUN">words</span> <span class="PART">to</span> <span
+            class="VERB">say</span><span class="PUNCT">.</span><span class="PUNCT">)</span>
+        </p>
+        <p>
+          <span class="ADV">Presently</span> <span class="PRON">she</span> <span class="VERB">began</span> <span
+            class="ADV">again</span><span class="PUNCT">.</span> <span class="PUNCT">“</span><span class="PRON">I</span>
+          <span class="VERB">wonder</span> <span class="SCONJ">if</span> <span class="PRON">I</span> <span
+            class="AUX">shall</span> <span class="VERB">fall</span> <span class="ADV">right</span> <span
+            class="ADP">through</span> <span class="DET">the</span> <span class="NOUN">earth</span><span
+            class="PUNCT">!</span> <span class="SCONJ">How</span> <span class="ADJ">funny</span> <span
+            class="PRON">it</span><span class="AUX">’ll</span> <span class="VERB">seem</span> <span
+            class="PART">to</span> <span class="VERB">come</span> <span class="ADP">out</span> <span
+            class="ADP">among</span> <span class="DET">the</span> <span class="NOUN">people</span> <span
+            class="PRON">that</span> <span class="VERB">walk</span> <span class="ADP">with</span> <span
+            class="PRON">their</span> <span class="NOUN">heads</span> <span class="ADV">downward</span><span
+            class="PUNCT">!</span> <span class="DET">The</span> <span class="PROPN">Antipathies</span><span
+            class="PUNCT">,</span> <span class="PRON">I</span> <span class="VERB">think</span><span
+            class="PUNCT">—</span><span class="PUNCT">”</span> <span class="PUNCT">(</span><span class="PRON">she</span>
+          <span class="AUX">was</span> <span class="ADV">rather</span> <span class="ADJ">glad</span> <span
+            class="PRON">there</span> <span class="VERB">was</span> <span class="DET">no</span> <span
+            class="NOUN">one</span> <span class="VERB">listening</span><span class="PUNCT">,</span> <span
+            class="DET">this</span> <span class="NOUN">time</span><span class="PUNCT">,</span> <span
+            class="SCONJ">as</span> <span class="PRON">it</span> <span class="AUX">did</span><span
+            class="ADV">n’t</span> <span class="VERB">sound</span> <span class="ADV">at</span> <span
+            class="DET">all</span> <span class="DET">the</span> <span class="ADJ">right</span> <span
+            class="NOUN">word</span><span class="PUNCT">)</span> <span class="PUNCT">“</span><span
+            class="PUNCT">—</span><span class="CCONJ">but</span> <span class="PRON">I</span> <span
+            class="AUX">shall</span> <span class="VERB">have</span> <span class="PART">to</span> <span
+            class="VERB">ask</span> <span class="PRON">them</span> <span class="PRON">what</span> <span
+            class="DET">the</span> <span class="NOUN">name</span> <span class="ADP">of</span> <span
+            class="DET">the</span> <span class="NOUN">country</span> <span class="AUX">is</span><span
+            class="PUNCT">,</span> <span class="PRON">you</span> <span class="VERB">know</span><span
+            class="PUNCT">.</span> <span class="INTJ">Please</span><span class="PUNCT">,</span> <span
+            class="PROPN">Ma’am</span><span class="PUNCT">,</span> <span class="AUX">is</span> <span
+            class="DET">this</span> <span class="PROPN">New</span> <span class="PROPN">Zealand</span> <span
+            class="CCONJ">or</span> <span class="PROPN">Australia</span><span class="PUNCT">?</span><span
+            class="PUNCT">”</span> <span class="PUNCT">(</span><span class="CCONJ">and</span> <span
+            class="PRON">she</span> <span class="VERB">tried</span> <span class="PART">to</span> <span
+            class="VERB">curtsey</span> <span class="SCONJ">as</span> <span class="PRON">she</span> <span
+            class="VERB">spoke</span><span class="PUNCT">—</span><span class="ADJ">fancy</span> <span
+            class="NOUN">curtseying</span> <span class="SCONJ">as</span> <span class="PRON">you</span><span
+            class="AUX">’re</span> <span class="VERB">falling</span> <span class="ADP">through</span> <span
+            class="DET">the</span> <span class="NOUN">air</span><span class="PUNCT">!</span> <span class="AUX">Do</span>
+          <span class="PRON">you</span> <span class="VERB">think</span> <span class="PRON">you</span> <span
+            class="AUX">could</span> <span class="VERB">manage</span> <span class="PRON">it</span><span
+            class="PUNCT">?</span><span class="PUNCT">)</span> <span class="PUNCT">“</span><span
+            class="CCONJ">And</span> <span class="PRON">what</span> <span class="DET">an</span> <span
+            class="ADJ">ignorant</span> <span class="ADJ">little</span> <span class="NOUN">girl</span> <span
+            class="PRON">she</span><span class="AUX">’ll</span> <span class="VERB">think</span> <span
+            class="PRON">me</span> <span class="ADP">for</span> <span class="VERB">asking</span><span
+            class="PUNCT">!</span> <span class="INTJ">No</span><span class="PUNCT">,</span> <span
+            class="PRON">it</span><span class="AUX">’ll</span> <span class="ADV">never</span> <span
+            class="VERB">do</span> <span class="PART">to</span> <span class="VERB">ask</span><span
+            class="PUNCT">:</span> <span class="ADV">perhaps</span> <span class="PRON">I</span> <span
+            class="AUX">shall</span> <span class="VERB">see</span> <span class="PRON">it</span> <span
+            class="VERB">written</span> <span class="ADP">up</span> <span class="ADV">somewhere</span><span
+            class="PUNCT">.</span><span class="PUNCT">”</span>
+        </p>
+        <p>
+          <span class="ADV">Down</span><span class="PUNCT">,</span> <span class="ADV">down</span><span
+            class="PUNCT">,</span> <span class="ADV">down</span><span class="PUNCT">.</span> <span
+            class="PRON">There</span> <span class="VERB">was</span> <span class="PRON">nothing</span> <span
+            class="ADV">else</span> <span class="PART">to</span> <span class="VERB">do</span><span
+            class="PUNCT">,</span> <span class="ADV">so</span> <span class="PROPN">Alice</span> <span
+            class="ADV">soon</span> <span class="VERB">began</span> <span class="VERB">talking</span> <span
+            class="ADV">again</span><span class="PUNCT">.</span> <span class="PUNCT">“</span><span
+            class="VERB">Dinah’ll</span> <span class="VERB">miss</span> <span class="PRON">me</span> <span
+            class="ADV">very</span> <span class="ADV">much</span> <span class="ADP">to</span><span
+            class="PUNCT">-</span><span class="NOUN">night</span><span class="PUNCT">,</span> <span
+            class="PRON">I</span> <span class="AUX">should</span> <span class="VERB">think</span><span
+            class="PUNCT">!</span><span class="PUNCT">”</span> <span class="PUNCT">(</span><span
+            class="PROPN">Dinah</span> <span class="AUX">was</span> <span class="DET">the</span> <span
+            class="NOUN">cat</span><span class="PUNCT">.</span><span class="PUNCT">)</span> <span
+            class="PUNCT">“</span><span class="PRON">I</span> <span class="VERB">hope</span> <span
+            class="PRON">they</span><span class="AUX">’ll</span> <span class="VERB">remember</span> <span
+            class="PRON">her</span> <span class="NOUN">saucer</span> <span class="ADP">of</span> <span
+            class="NOUN">milk</span> <span class="ADP">at</span> <span class="NOUN">tea</span><span
+            class="PUNCT">-</span><span class="NOUN">time</span><span class="PUNCT">.</span> <span
+            class="PROPN">Dinah</span> <span class="PRON">my</span> <span class="NOUN">dear</span><span
+            class="PUNCT">!</span> <span class="PRON">I</span> <span class="VERB">wish</span> <span
+            class="PRON">you</span> <span class="AUX">were</span> <span class="ADV">down</span> <span
+            class="ADV">here</span> <span class="ADP">with</span> <span class="PRON">me</span><span
+            class="PUNCT">!</span> <span class="PRON">There</span> <span class="VERB">are</span> <span
+            class="DET">no</span> <span class="NOUN">mice</span> <span class="ADP">in</span> <span
+            class="DET">the</span> <span class="NOUN">air</span><span class="PUNCT">,</span> <span
+            class="PRON">I</span><span class="PUNCT">’</span><span class="VERB">m</span> <span
+            class="ADJ">afraid</span><span class="PUNCT">,</span> <span class="CCONJ">but</span> <span
+            class="PRON">you</span> <span class="AUX">might</span> <span class="VERB">catch</span> <span
+            class="DET">a</span> <span class="NOUN">bat</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="PRON">that</span><span class="AUX">’s</span> <span
+            class="ADV">very</span> <span class="ADP">like</span> <span class="DET">a</span> <span
+            class="NOUN">mouse</span><span class="PUNCT">,</span> <span class="PRON">you</span> <span
+            class="VERB">know</span><span class="PUNCT">.</span> <span class="CCONJ">But</span> <span
+            class="AUX">do</span> <span class="NOUN">cats</span> <span class="VERB">eat</span> <span
+            class="NOUN">bats</span><span class="PUNCT">,</span> <span class="PRON">I</span> <span
+            class="VERB">wonder</span><span class="PUNCT">?</span><span class="PUNCT">”</span> <span
+            class="CCONJ">And</span> <span class="ADV">here</span> <span class="PROPN">Alice</span> <span
+            class="VERB">began</span> <span class="PART">to</span> <span class="VERB">get</span> <span
+            class="ADV">rather</span> <span class="ADJ">sleepy</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="VERB">went</span> <span class="ADP">on</span> <span
+            class="VERB">saying</span> <span class="ADP">to</span> <span class="PRON">herself</span><span
+            class="PUNCT">,</span> <span class="ADP">in</span> <span class="DET">a</span> <span
+            class="ADJ">dreamy</span> <span class="NOUN">sort</span> <span class="ADP">of</span> <span
+            class="NOUN">way</span><span class="PUNCT">,</span> <span class="PUNCT">“</span><span class="AUX">Do</span>
+          <span class="NOUN">cats</span> <span class="VERB">eat</span> <span class="NOUN">bats</span><span
+            class="PUNCT">?</span> <span class="AUX">Do</span> <span class="NOUN">cats</span> <span
+            class="VERB">eat</span> <span class="NOUN">bats</span><span class="PUNCT">?</span><span
+            class="PUNCT">”</span> <span class="CCONJ">and</span> <span class="ADV">sometimes</span><span
+            class="PUNCT">,</span> <span class="PUNCT">“</span><span class="AUX">Do</span> <span
+            class="NOUN">bats</span> <span class="VERB">eat</span> <span class="NOUN">cats</span><span
+            class="PUNCT">?</span><span class="PUNCT">”</span> <span class="ADP">for</span><span class="PUNCT">,</span>
+          <span class="PRON">you</span> <span class="VERB">see</span><span class="PUNCT">,</span> <span
+            class="SCONJ">as</span> <span class="PRON">she</span> <span class="AUX">could</span><span
+            class="ADV">n’t</span> <span class="VERB">answer</span> <span class="DET">either</span> <span
+            class="NOUN">question</span><span class="PUNCT">,</span> <span class="PRON">it</span> <span
+            class="AUX">did</span><span class="ADV">n’t</span> <span class="ADV">much</span> <span
+            class="ADV">matter</span> <span class="DET">which</span> <span class="NOUN">way</span> <span
+            class="PRON">she</span> <span class="VERB">put</span> <span class="PRON">it</span><span
+            class="PUNCT">.</span> <span class="PRON">She</span> <span class="VERB">felt</span> <span
+            class="SCONJ">that</span> <span class="PRON">she</span> <span class="AUX">was</span> <span
+            class="VERB">dozing</span> <span class="ADP">off</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="AUX">had</span> <span class="ADV">just</span> <span
+            class="VERB">begun</span> <span class="PART">to</span> <span class="VERB">dream</span> <span
+            class="SCONJ">that</span> <span class="PRON">she</span> <span class="AUX">was</span> <span
+            class="VERB">walking</span> <span class="NOUN">hand</span> <span class="ADP">in</span> <span
+            class="NOUN">hand</span> <span class="ADP">with</span> <span class="PROPN">Dinah</span><span
+            class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="VERB">saying</span> <span
+            class="ADP">to</span> <span class="PRON">her</span> <span class="ADV">very</span> <span
+            class="ADV">earnestly</span><span class="PUNCT">,</span> <span class="PUNCT">“</span><span
+            class="ADV">Now</span><span class="PUNCT">,</span> <span class="PROPN">Dinah</span><span
+            class="PUNCT">,</span> <span class="VERB">tell</span> <span class="PRON">me</span> <span
+            class="DET">the</span> <span class="NOUN">truth</span><span class="PUNCT">:</span> <span
+            class="AUX">did</span> <span class="PRON">you</span> <span class="ADV">ever</span> <span
+            class="VERB">eat</span> <span class="DET">a</span> <span class="NOUN">bat</span><span
+            class="PUNCT">?</span><span class="PUNCT">”</span> <span class="SCONJ">when</span> <span
+            class="ADV">suddenly</span><span class="PUNCT">,</span> <span class="NOUN">thump</span><span
+            class="PUNCT">!</span> <span class="NOUN">thump</span><span class="PUNCT">!</span> <span
+            class="ADV">down</span> <span class="PRON">she</span> <span class="VERB">came</span> <span
+            class="SCONJ">upon</span> <span class="DET">a</span> <span class="NOUN">heap</span> <span
+            class="ADP">of</span> <span class="NOUN">sticks</span> <span class="CCONJ">and</span> <span
+            class="ADJ">dry</span> <span class="NOUN">leaves</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="DET">the</span> <span class="NOUN">fall</span> <span
+            class="AUX">was</span> <span class="ADV">over</span><span class="PUNCT">.</span> <span
+            class="PROPN">Alice</span> <span class="AUX">was</span> <span class="PART">not</span> <span
+            class="DET">a</span> <span class="NOUN">bit</span> <span class="ADJ">hurt</span><span class="PUNCT">,</span>
+          <span class="CCONJ">and</span> <span class="PRON">she</span> <span class="VERB">jumped</span> <span
+            class="ADP">up</span> <span class="ADP">on</span> <span class="ADP">to</span> <span class="PRON">her</span>
+          <span class="NOUN">feet</span> <span class="ADP">in</span> <span class="DET">a</span> <span
+            class="NOUN">moment</span><span class="PUNCT">:</span> <span class="PRON">she</span> <span
+            class="VERB">looked</span> <span class="ADP">up</span><span class="PUNCT">,</span> <span
+            class="CCONJ">but</span> <span class="PRON">it</span> <span class="AUX">was</span> <span
+            class="PRON">all</span> <span class="ADJ">dark</span> <span class="ADV">overhead</span><span
+            class="PUNCT">;</span> <span class="SCONJ">before</span> <span class="PRON">her</span> <span
+            class="AUX">was</span> <span class="DET">another</span> <span class="ADJ">long</span> <span
+            class="NOUN">passage</span><span class="PUNCT">,</span> <span class="CCONJ">and</span> <span
+            class="DET">the</span> <span class="PROPN">White</span> <span class="PROPN">Rabbit</span> <span
+            class="AUX">was</span> <span class="ADV">still</span> <span class="ADP">in</span> <span
+            class="NOUN">sight</span><span class="PUNCT">,</span> <span class="VERB">hurrying</span> <span
+            class="ADP">down</span> <span class="PRON">it</span><span class="PUNCT">.</span> <span
+            class="PRON">There</span> <span class="VERB">was</span> <span class="PART">not</span> <span
+            class="DET">a</span> <span class="NOUN">moment</span> <span class="PART">to</span> <span
+            class="AUX">be</span> <span class="VERB">lost</span><span class="PUNCT">:</span> <span
+            class="ADV">away</span> <span class="VERB">went</span> <span class="PROPN">Alice</span> <span
+            class="ADP">like</span> <span class="DET">the</span> <span class="NOUN">wind</span><span
+            class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="AUX">was</span> <span
+            class="ADV">just</span> <span class="ADP">in</span> <span class="NOUN">time</span> <span
+            class="PART">to</span> <span class="VERB">hear</span> <span class="PRON">it</span> <span
+            class="VERB">say</span><span class="PUNCT">,</span> <span class="SCONJ">as</span> <span
+            class="PRON">it</span> <span class="VERB">turned</span> <span class="DET">a</span> <span
+            class="NOUN">corner</span><span class="PUNCT">,</span> <span class="PUNCT">“</span><span
+            class="INTJ">Oh</span> <span class="PRON">my</span> <span class="NOUN">ears</span> <span
+            class="CCONJ">and</span> <span class="NOUN">whiskers</span><span class="PUNCT">,</span> <span
+            class="SCONJ">how</span> <span class="ADV">late</span> <span class="PRON">it</span><span
+            class="AUX">’s</span> <span class="VERB">getting</span><span class="PUNCT">!</span><span
+            class="PUNCT">”</span> <span class="PRON">She</span> <span class="AUX">was</span> <span
+            class="ADJ">close</span> <span class="ADP">behind</span> <span class="PRON">it</span> <span
+            class="SCONJ">when</span> <span class="PRON">she</span> <span class="VERB">turned</span> <span
+            class="DET">the</span> <span class="NOUN">corner</span><span class="PUNCT">,</span> <span
+            class="CCONJ">but</span> <span class="DET">the</span> <span class="PROPN">Rabbit</span> <span
+            class="AUX">was</span> <span class="ADV">no</span> <span class="ADV">longer</span> <span
+            class="PART">to</span> <span class="AUX">be</span> <span class="VERB">seen</span><span
+            class="PUNCT">:</span> <span class="PRON">she</span> <span class="VERB">found</span> <span
+            class="PRON">herself</span> <span class="ADP">in</span> <span class="DET">a</span> <span
+            class="ADJ">long</span><span class="PUNCT">,</span> <span class="ADJ">low</span> <span
+            class="NOUN">hall</span><span class="PUNCT">,</span> <span class="PRON">which</span> <span
+            class="AUX">was</span> <span class="VERB">lit</span> <span class="ADP">up</span> <span class="ADP">by</span>
+          <span class="DET">a</span> <span class="NOUN">row</span> <span class="ADP">of</span> <span
+            class="NOUN">lamps</span> <span class="VERB">hanging</span> <span class="ADP">from</span> <span
+            class="DET">the</span> <span class="NOUN">roof</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+        <p>
+          <span class="PRON">There</span> <span class="VERB">were</span> <span class="NOUN">doors</span> <span
+            class="PRON">all</span> <span class="VERB">round</span> <span class="DET">the</span> <span
+            class="NOUN">hall</span><span class="PUNCT">,</span> <span class="CCONJ">but</span> <span
+            class="PRON">they</span> <span class="AUX">were</span> <span class="ADV">all</span> <span
+            class="VERB">locked</span><span class="PUNCT">;</span> <span class="CCONJ">and</span> <span
+            class="SCONJ">when</span> <span class="PROPN">Alice</span> <span class="AUX">had</span> <span
+            class="AUX">been</span> <span class="DET">all</span> <span class="DET">the</span> <span
+            class="NOUN">way</span> <span class="ADV">down</span> <span class="NUM">one</span> <span
+            class="NOUN">side</span> <span class="CCONJ">and</span> <span class="ADP">up</span> <span
+            class="DET">the</span> <span class="ADJ">other</span><span class="PUNCT">,</span> <span
+            class="VERB">trying</span> <span class="DET">every</span> <span class="NOUN">door</span><span
+            class="PUNCT">,</span> <span class="PRON">she</span> <span class="VERB">walked</span> <span
+            class="ADV">sadly</span> <span class="ADP">down</span> <span class="DET">the</span> <span
+            class="NOUN">middle</span><span class="PUNCT">,</span> <span class="VERB">wondering</span> <span
+            class="SCONJ">how</span> <span class="PRON">she</span> <span class="AUX">was</span> <span
+            class="ADV">ever</span> <span class="PART">to</span> <span class="VERB">get</span> <span
+            class="ADP">out</span> <span class="ADV">again</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="ADV">Suddenly</span> <span class="PRON">she</span> <span class="VERB">came</span> <span
+            class="SCONJ">upon</span> <span class="DET">a</span> <span class="ADJ">little</span> <span
+            class="NUM">three</span><span class="PUNCT">-</span><span class="ADJ">legged</span> <span
+            class="NOUN">table</span><span class="PUNCT">,</span> <span class="PRON">all</span> <span
+            class="VERB">made</span> <span class="ADP">of</span> <span class="ADJ">solid</span> <span
+            class="NOUN">glass</span><span class="PUNCT">;</span> <span class="PRON">there</span> <span
+            class="VERB">was</span> <span class="PRON">nothing</span> <span class="ADP">on</span> <span
+            class="PRON">it</span> <span class="SCONJ">except</span> <span class="DET">a</span> <span
+            class="ADJ">tiny</span> <span class="ADJ">golden</span> <span class="NOUN">key</span><span
+            class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="PROPN">Alice</span><span
+            class="PART">’s</span> <span class="ADJ">first</span> <span class="NOUN">thought</span> <span
+            class="AUX">was</span> <span class="SCONJ">that</span> <span class="PRON">it</span> <span
+            class="AUX">might</span> <span class="VERB">belong</span> <span class="ADP">to</span> <span
+            class="NUM">one</span> <span class="ADP">of</span> <span class="DET">the</span> <span
+            class="NOUN">doors</span> <span class="ADP">of</span> <span class="DET">the</span> <span
+            class="NOUN">hall</span><span class="PUNCT">;</span> <span class="CCONJ">but</span><span
+            class="PUNCT">,</span> <span class="INTJ">alas</span><span class="PUNCT">!</span> <span
+            class="CCONJ">either</span> <span class="DET">the</span> <span class="NOUN">locks</span> <span
+            class="AUX">were</span> <span class="ADV">too</span> <span class="ADJ">large</span><span
+            class="PUNCT">,</span> <span class="CCONJ">or</span> <span class="DET">the</span> <span
+            class="NOUN">key</span> <span class="AUX">was</span> <span class="ADV">too</span> <span
+            class="ADJ">small</span><span class="PUNCT">,</span> <span class="CCONJ">but</span> <span
+            class="ADP">at</span> <span class="DET">any</span> <span class="NOUN">rate</span> <span
+            class="PRON">it</span> <span class="AUX">would</span> <span class="PART">not</span> <span
+            class="VERB">open</span> <span class="PRON">any</span> <span class="ADP">of</span> <span
+            class="PRON">them</span><span class="PUNCT">.</span> <span class="ADV">However</span><span
+            class="PUNCT">,</span> <span class="ADP">on</span> <span class="DET">the</span> <span
+            class="ADJ">second</span> <span class="NOUN">time</span> <span class="ADV">round</span><span
+            class="PUNCT">,</span> <span class="PRON">she</span> <span class="VERB">came</span> <span
+            class="SCONJ">upon</span> <span class="DET">a</span> <span class="ADJ">low</span> <span
+            class="NOUN">curtain</span> <span class="PRON">she</span> <span class="AUX">had</span> <span
+            class="PART">not</span> <span class="VERB">noticed</span> <span class="ADV">before</span><span
+            class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="ADP">behind</span> <span
+            class="PRON">it</span> <span class="AUX">was</span> <span class="DET">a</span> <span
+            class="ADJ">little</span> <span class="NOUN">door</span> <span class="ADV">about</span> <span
+            class="NUM">fifteen</span> <span class="NOUN">inches</span> <span class="ADJ">high</span><span
+            class="PUNCT">:</span> <span class="PRON">she</span> <span class="VERB">tried</span> <span
+            class="DET">the</span> <span class="ADJ">little</span> <span class="ADJ">golden</span> <span
+            class="NOUN">key</span> <span class="ADP">in</span> <span class="DET">the</span> <span
+            class="NOUN">lock</span><span class="PUNCT">,</span> <span class="CCONJ">and</span> <span
+            class="ADP">to</span> <span class="PRON">her</span> <span class="ADJ">great</span> <span
+            class="NOUN">delight</span> <span class="PRON">it</span> <span class="VERB">fitted</span><span
+            class="PUNCT">!</span>
+        </p>
+        <p>
+          <span class="PROPN">Alice</span> <span class="VERB">opened</span> <span class="DET">the</span> <span
+            class="NOUN">door</span> <span class="CCONJ">and</span> <span class="VERB">found</span> <span
+            class="SCONJ">that</span> <span class="PRON">it</span> <span class="VERB">led</span> <span
+            class="ADP">into</span> <span class="DET">a</span> <span class="ADJ">small</span> <span
+            class="NOUN">passage</span><span class="PUNCT">,</span> <span class="PART">not</span> <span
+            class="ADV">much</span> <span class="ADJ">larger</span> <span class="ADP">than</span> <span
+            class="DET">a</span> <span class="NOUN">rat</span><span class="PUNCT">-</span><span
+            class="NOUN">hole</span><span class="PUNCT">:</span> <span class="PRON">she</span> <span
+            class="VERB">knelt</span> <span class="ADP">down</span> <span class="CCONJ">and</span> <span
+            class="VERB">looked</span> <span class="ADP">along</span> <span class="DET">the</span> <span
+            class="NOUN">passage</span> <span class="ADP">into</span> <span class="DET">the</span> <span
+            class="ADJ">loveliest</span> <span class="NOUN">garden</span> <span class="PRON">you</span> <span
+            class="ADV">ever</span> <span class="VERB">saw</span><span class="PUNCT">.</span> <span
+            class="SCONJ">How</span> <span class="PRON">she</span> <span class="VERB">longed</span> <span
+            class="PART">to</span> <span class="VERB">get</span> <span class="ADP">out</span> <span
+            class="ADP">of</span> <span class="DET">that</span> <span class="ADJ">dark</span> <span
+            class="NOUN">hall</span><span class="PUNCT">,</span> <span class="CCONJ">and</span> <span
+            class="VERB">wander</span> <span class="ADP">about</span> <span class="ADP">among</span> <span
+            class="DET">those</span> <span class="NOUN">beds</span> <span class="ADP">of</span> <span
+            class="ADJ">bright</span> <span class="NOUN">flowers</span> <span class="CCONJ">and</span> <span
+            class="DET">those</span> <span class="ADJ">cool</span> <span class="NOUN">fountains</span><span
+            class="PUNCT">,</span> <span class="CCONJ">but</span> <span class="PRON">she</span> <span
+            class="AUX">could</span> <span class="PART">not</span> <span class="ADV">even</span> <span
+            class="VERB">get</span> <span class="PRON">her</span> <span class="NOUN">head</span> <span
+            class="ADP">through</span> <span class="DET">the</span> <span class="NOUN">doorway</span><span
+            class="PUNCT">;</span> <span class="PUNCT">“</span><span class="CCONJ">and</span> <span
+            class="ADV">even</span> <span class="SCONJ">if</span> <span class="PRON">my</span> <span
+            class="NOUN">head</span> <span class="AUX">would</span> <span class="VERB">go</span> <span
+            class="ADV">through</span><span class="PUNCT">,</span><span class="PUNCT">”</span> <span
+            class="VERB">thought</span> <span class="ADJ">poor</span> <span class="PROPN">Alice</span><span
+            class="PUNCT">,</span> <span class="PUNCT">“</span><span class="PRON">it</span> <span
+            class="AUX">would</span> <span class="AUX">be</span> <span class="ADP">of</span> <span
+            class="ADV">very</span> <span class="ADJ">little</span> <span class="NOUN">use</span> <span
+            class="ADP">without</span> <span class="PRON">my</span> <span class="NOUN">shoulders</span><span
+            class="PUNCT">.</span> <span class="INTJ">Oh</span><span class="PUNCT">,</span> <span
+            class="SCONJ">how</span> <span class="PRON">I</span> <span class="VERB">wish</span> <span
+            class="PRON">I</span> <span class="AUX">could</span> <span class="VERB">shut</span> <span
+            class="ADP">up</span> <span class="ADP">like</span> <span class="DET">a</span> <span
+            class="NOUN">telescope</span><span class="PUNCT">!</span> <span class="PRON">I</span> <span
+            class="VERB">think</span> <span class="PRON">I</span> <span class="AUX">could</span><span
+            class="PUNCT">,</span> <span class="SCONJ">if</span> <span class="PRON">I</span> <span
+            class="ADV">only</span> <span class="VERB">knew</span> <span class="SCONJ">how</span> <span
+            class="PART">to</span> <span class="VERB">begin</span><span class="PUNCT">.</span><span
+            class="PUNCT">”</span> <span class="SCONJ">For</span><span class="PUNCT">,</span> <span
+            class="PRON">you</span> <span class="VERB">see</span><span class="PUNCT">,</span> <span
+            class="ADV">so</span> <span class="ADJ">many</span> <span class="ADJ">out</span><span
+            class="PUNCT">-</span><span class="ADP">of</span><span class="PUNCT">-</span><span
+            class="DET">the</span><span class="PUNCT">-</span><span class="NOUN">way</span> <span
+            class="NOUN">things</span> <span class="AUX">had</span> <span class="VERB">happened</span> <span
+            class="ADV">lately</span><span class="PUNCT">,</span> <span class="SCONJ">that</span> <span
+            class="PROPN">Alice</span> <span class="AUX">had</span> <span class="VERB">begun</span> <span
+            class="PART">to</span> <span class="VERB">think</span> <span class="SCONJ">that</span> <span
+            class="ADV">very</span> <span class="ADJ">few</span> <span class="NOUN">things</span> <span
+            class="ADV">indeed</span> <span class="AUX">were</span> <span class="ADV">really</span> <span
+            class="ADJ">impossible</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="PRON">There</span> <span class="VERB">seemed</span> <span class="PART">to</span> <span
+            class="AUX">be</span> <span class="DET">no</span> <span class="NOUN">use</span> <span class="ADP">in</span>
+          <span class="VERB">waiting</span> <span class="ADP">by</span> <span class="DET">the</span> <span
+            class="ADJ">little</span> <span class="NOUN">door</span><span class="PUNCT">,</span> <span
+            class="ADV">so</span> <span class="PRON">she</span> <span class="VERB">went</span> <span
+            class="ADV">back</span> <span class="ADP">to</span> <span class="DET">the</span> <span
+            class="NOUN">table</span><span class="PUNCT">,</span> <span class="NOUN">half</span> <span
+            class="VERB">hoping</span> <span class="PRON">she</span> <span class="AUX">might</span> <span
+            class="VERB">find</span> <span class="DET">another</span> <span class="NOUN">key</span> <span
+            class="ADP">on</span> <span class="PRON">it</span><span class="PUNCT">,</span> <span class="CCONJ">or</span>
+          <span class="ADP">at</span> <span class="DET">any</span> <span class="NOUN">rate</span> <span
+            class="DET">a</span> <span class="NOUN">book</span> <span class="ADP">of</span> <span
+            class="NOUN">rules</span> <span class="ADP">for</span> <span class="VERB">shutting</span> <span
+            class="NOUN">people</span> <span class="ADP">up</span> <span class="ADP">like</span> <span
+            class="NOUN">telescopes</span><span class="PUNCT">:</span> <span class="DET">this</span> <span
+            class="NOUN">time</span> <span class="PRON">she</span> <span class="VERB">found</span> <span
+            class="DET">a</span> <span class="ADJ">little</span> <span class="NOUN">bottle</span> <span
+            class="ADP">on</span> <span class="PRON">it</span><span class="PUNCT">,</span> <span
+            class="PUNCT">(</span><span class="PUNCT">“</span><span class="PRON">which</span> <span
+            class="ADV">certainly</span> <span class="AUX">was</span> <span class="PART">not</span> <span
+            class="ADV">here</span> <span class="ADV">before</span><span class="PUNCT">,</span><span
+            class="PUNCT">”</span> <span class="VERB">said</span> <span class="PROPN">Alice</span><span
+            class="PUNCT">,</span><span class="PUNCT">)</span> <span class="CCONJ">and</span> <span
+            class="VERB">round</span> <span class="DET">the</span> <span class="NOUN">neck</span> <span
+            class="ADP">of</span> <span class="DET">the</span> <span class="NOUN">bottle</span> <span
+            class="AUX">was</span> <span class="DET">a</span> <span class="NOUN">paper</span> <span
+            class="NOUN">label</span><span class="PUNCT">,</span> <span class="ADP">with</span> <span
+            class="DET">the</span> <span class="NOUN">words</span> <span class="PUNCT">“</span><span
+            class="PROPN">DRINK</span> <span class="PRON">ME</span><span class="PUNCT">,</span><span
+            class="PUNCT">”</span> <span class="ADV">beautifully</span> <span class="VERB">printed</span> <span
+            class="ADP">on</span> <span class="PRON">it</span> <span class="ADP">in</span> <span
+            class="ADJ">large</span> <span class="NOUN">letters</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="PRON">It</span> <span class="AUX">was</span> <span class="ADV">all</span> <span
+            class="ADV">very</span> <span class="ADV">well</span> <span class="PART">to</span> <span
+            class="VERB">say</span> <span class="PUNCT">“</span><span class="VERB">Drink</span> <span
+            class="PRON">me</span><span class="PUNCT">,</span><span class="PUNCT">”</span> <span
+            class="CCONJ">but</span> <span class="DET">the</span> <span class="ADJ">wise</span> <span
+            class="ADJ">little</span> <span class="PROPN">Alice</span> <span class="AUX">was</span> <span
+            class="PART">not</span> <span class="VERB">going</span> <span class="PART">to</span> <span
+            class="VERB">do</span> <span class="PRON">that</span> <span class="ADP">in</span> <span class="DET">a</span>
+          <span class="NOUN">hurry</span><span class="PUNCT">.</span> <span class="PUNCT">“</span><span
+            class="INTJ">No</span><span class="PUNCT">,</span> <span class="PRON">I</span><span class="AUX">’ll</span>
+          <span class="VERB">look</span> <span class="ADV">first</span><span class="PUNCT">,</span><span
+            class="PUNCT">”</span> <span class="PRON">she</span> <span class="VERB">said</span><span
+            class="PUNCT">,</span> <span class="PUNCT">“</span><span class="CCONJ">and</span> <span
+            class="VERB">see</span> <span class="SCONJ">whether</span> <span class="PRON">it</span><span
+            class="AUX">’s</span> <span class="VERB">marked</span> <span class="PUNCT">‘</span><span
+            class="NOUN">poison</span><span class="PUNCT">’</span> <span class="CCONJ">or</span> <span
+            class="PART">not</span><span class="PUNCT">”</span><span class="PUNCT">;</span> <span
+            class="SCONJ">for</span> <span class="PRON">she</span> <span class="AUX">had</span> <span
+            class="VERB">read</span> <span class="ADJ">several</span> <span class="ADJ">nice</span> <span
+            class="ADJ">little</span> <span class="NOUN">histories</span> <span class="ADP">about</span> <span
+            class="NOUN">children</span> <span class="PRON">who</span> <span class="AUX">had</span> <span
+            class="AUX">got</span> <span class="VERB">burnt</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="VERB">eaten</span> <span class="ADP">up</span> <span
+            class="ADP">by</span> <span class="ADJ">wild</span> <span class="NOUN">beasts</span> <span
+            class="CCONJ">and</span> <span class="ADJ">other</span> <span class="ADJ">unpleasant</span> <span
+            class="NOUN">things</span><span class="PUNCT">,</span> <span class="ADV">all</span> <span
+            class="SCONJ">because</span> <span class="PRON">they</span> <span class="AUX">would</span> <span
+            class="PART">not</span> <span class="VERB">remember</span> <span class="DET">the</span> <span
+            class="ADJ">simple</span> <span class="NOUN">rules</span> <span class="PRON">their</span> <span
+            class="NOUN">friends</span> <span class="AUX">had</span> <span class="VERB">taught</span> <span
+            class="PRON">them</span><span class="PUNCT">:</span> <span class="ADJ">such</span> <span
+            class="ADP">as</span><span class="PUNCT">,</span> <span class="SCONJ">that</span> <span class="DET">a</span>
+          <span class="ADJ">red</span><span class="PUNCT">-</span><span class="ADJ">hot</span> <span
+            class="NOUN">poker</span> <span class="AUX">will</span> <span class="VERB">burn</span> <span
+            class="PRON">you</span> <span class="SCONJ">if</span> <span class="PRON">you</span> <span
+            class="VERB">hold</span> <span class="PRON">it</span> <span class="ADV">too</span> <span
+            class="ADV">long</span><span class="PUNCT">;</span> <span class="CCONJ">and</span> <span
+            class="SCONJ">that</span> <span class="SCONJ">if</span> <span class="PRON">you</span> <span
+            class="VERB">cut</span> <span class="PRON">your</span> <span class="NOUN">finger</span> <span
+            class="ADV">very</span> <span class="ADV">deeply</span> <span class="ADP">with</span> <span
+            class="DET">a</span> <span class="NOUN">knife</span><span class="PUNCT">,</span> <span
+            class="PRON">it</span> <span class="ADV">usually</span> <span class="VERB">bleeds</span><span
+            class="PUNCT">;</span> <span class="CCONJ">and</span> <span class="PRON">she</span> <span
+            class="AUX">had</span> <span class="ADV">never</span> <span class="VERB">forgotten</span> <span
+            class="SCONJ">that</span><span class="PUNCT">,</span> <span class="SCONJ">if</span> <span
+            class="PRON">you</span> <span class="VERB">drink</span> <span class="ADV">much</span> <span
+            class="ADP">from</span> <span class="DET">a</span> <span class="NOUN">bottle</span> <span
+            class="VERB">marked</span> <span class="PUNCT">“</span><span class="NOUN">poison</span><span
+            class="PUNCT">,</span><span class="PUNCT">”</span> <span class="PRON">it</span> <span class="AUX">is</span>
+          <span class="ADV">almost</span> <span class="ADJ">certain</span> <span class="PART">to</span> <span
+            class="VERB">disagree</span> <span class="ADP">with</span> <span class="PRON">you</span><span
+            class="PUNCT">,</span> <span class="ADV">sooner</span> <span class="CCONJ">or</span> <span
+            class="ADV">later</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="ADV">However</span><span class="PUNCT">,</span> <span class="DET">this</span> <span
+            class="NOUN">bottle</span> <span class="AUX">was</span> <span class="PART">not</span> <span
+            class="VERB">marked</span> <span class="PUNCT">“</span><span class="NOUN">poison</span><span
+            class="PUNCT">,</span><span class="PUNCT">”</span> <span class="ADV">so</span> <span
+            class="PROPN">Alice</span> <span class="VERB">ventured</span> <span class="PART">to</span> <span
+            class="VERB">taste</span> <span class="PRON">it</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="VERB">finding</span> <span class="PRON">it</span> <span
+            class="ADV">very</span> <span class="ADJ">nice</span><span class="PUNCT">,</span> <span
+            class="PUNCT">(</span><span class="PRON">it</span> <span class="AUX">had</span><span class="PUNCT">,</span>
+          <span class="ADP">in</span> <span class="NOUN">fact</span><span class="PUNCT">,</span> <span
+            class="DET">a</span> <span class="NOUN">sort</span> <span class="ADP">of</span> <span
+            class="ADJ">mixed</span> <span class="NOUN">flavour</span> <span class="ADP">of</span> <span
+            class="NOUN">cherry</span><span class="PUNCT">-</span><span class="ADJ">tart</span><span
+            class="PUNCT">,</span> <span class="NOUN">custard</span><span class="PUNCT">,</span> <span
+            class="NOUN">pine</span><span class="PUNCT">-</span><span class="NOUN">apple</span><span
+            class="PUNCT">,</span> <span class="NOUN">roast</span> <span class="PROPN">turkey</span><span
+            class="PUNCT">,</span> <span class="NOUN">toffee</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="ADJ">hot</span> <span class="VERB">buttered</span> <span
+            class="NOUN">toast</span><span class="PUNCT">,</span><span class="PUNCT">)</span> <span
+            class="PRON">she</span> <span class="ADV">very</span> <span class="ADV">soon</span> <span
+            class="VERB">finished</span> <span class="PRON">it</span> <span class="ADP">off</span><span
+            class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="PUNCT">“</span><span class="PRON">What</span> <span class="DET">a</span> <span
+            class="ADJ">curious</span> <span class="NOUN">feeling</span><span class="PUNCT">!</span><span
+            class="PUNCT">”</span> <span class="VERB">said</span> <span class="PROPN">Alice</span><span
+            class="PUNCT">;</span> <span class="PUNCT">“</span><span class="PRON">I</span> <span class="AUX">must</span>
+          <span class="AUX">be</span> <span class="VERB">shutting</span> <span class="ADP">up</span> <span
+            class="ADP">like</span> <span class="DET">a</span> <span class="NOUN">telescope</span><span
+            class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="PUNCT">”</span> <span class="CCONJ">And</span> <span class="ADV">so</span> <span
+            class="PRON">it</span> <span class="AUX">was</span> <span class="ADV">indeed</span><span
+            class="PUNCT">:</span> <span class="PRON">she</span> <span class="AUX">was</span> <span
+            class="ADV">now</span> <span class="ADV">only</span> <span class="NUM">ten</span> <span
+            class="NOUN">inches</span> <span class="ADJ">high</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="PRON">her</span> <span class="NOUN">face</span> <span
+            class="VERB">brightened</span> <span class="ADP">up</span> <span class="ADP">at</span> <span
+            class="DET">the</span> <span class="NOUN">thought</span> <span class="SCONJ">that</span> <span
+            class="PRON">she</span> <span class="AUX">was</span> <span class="ADV">now</span> <span
+            class="DET">the</span> <span class="ADJ">right</span> <span class="NOUN">size</span> <span
+            class="ADP">for</span> <span class="VERB">going</span> <span class="ADP">through</span> <span
+            class="DET">the</span> <span class="ADJ">little</span> <span class="NOUN">door</span> <span
+            class="ADP">into</span> <span class="DET">that</span> <span class="ADJ">lovely</span> <span
+            class="NOUN">garden</span><span class="PUNCT">.</span> <span class="ADV">First</span><span
+            class="PUNCT">,</span> <span class="ADV">however</span><span class="PUNCT">,</span> <span
+            class="PRON">she</span> <span class="VERB">waited</span> <span class="ADP">for</span> <span
+            class="DET">a</span> <span class="ADJ">few</span> <span class="NOUN">minutes</span> <span
+            class="PART">to</span> <span class="VERB">see</span> <span class="SCONJ">if</span> <span
+            class="PRON">she</span> <span class="AUX">was</span> <span class="VERB">going</span> <span
+            class="PART">to</span> <span class="VERB">shrink</span> <span class="PRON">any</span> <span
+            class="ADV">further</span><span class="PUNCT">:</span> <span class="PRON">she</span> <span
+            class="VERB">felt</span> <span class="DET">a</span> <span class="ADJ">little</span> <span
+            class="ADJ">nervous</span> <span class="ADP">about</span> <span class="PRON">this</span><span
+            class="PUNCT">;</span> <span class="PUNCT">“</span><span class="SCONJ">for</span> <span
+            class="PRON">it</span> <span class="AUX">might</span> <span class="VERB">end</span><span
+            class="PUNCT">,</span> <span class="PRON">you</span> <span class="VERB">know</span><span
+            class="PUNCT">,</span><span class="PUNCT">”</span> <span class="VERB">said</span> <span
+            class="PROPN">Alice</span> <span class="ADP">to</span> <span class="PRON">herself</span><span
+            class="PUNCT">,</span> <span class="PUNCT">“</span><span class="ADP">in</span> <span class="PRON">my</span>
+          <span class="VERB">going</span> <span class="ADV">out</span> <span class="ADV">altogether</span><span
+            class="PUNCT">,</span> <span class="ADP">like</span> <span class="DET">a</span> <span
+            class="NOUN">candle</span><span class="PUNCT">.</span> <span class="PRON">I</span> <span
+            class="VERB">wonder</span> <span class="PRON">what</span> <span class="PRON">I</span> <span
+            class="AUX">should</span> <span class="AUX">be</span> <span class="ADP">like</span> <span
+            class="ADV">then</span><span class="PUNCT">?</span><span class="PUNCT">”</span> <span
+            class="CCONJ">And</span> <span class="PRON">she</span> <span class="VERB">tried</span> <span
+            class="PART">to</span> <span class="VERB">fancy</span> <span class="PRON">what</span> <span
+            class="DET">the</span> <span class="NOUN">flame</span> <span class="ADP">of</span> <span
+            class="DET">a</span> <span class="NOUN">candle</span> <span class="AUX">is</span> <span
+            class="ADP">like</span> <span class="SCONJ">after</span> <span class="DET">the</span> <span
+            class="NOUN">candle</span> <span class="AUX">is</span> <span class="VERB">blown</span> <span
+            class="ADP">out</span><span class="PUNCT">,</span> <span class="SCONJ">for</span> <span
+            class="PRON">she</span> <span class="AUX">could</span> <span class="PART">not</span> <span
+            class="VERB">remember</span> <span class="ADV">ever</span> <span class="AUX">having</span> <span
+            class="VERB">seen</span> <span class="DET">such</span> <span class="DET">a</span> <span
+            class="NOUN">thing</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="ADP">After</span> <span class="DET">a</span> <span class="NOUN">while</span><span
+            class="PUNCT">,</span> <span class="VERB">finding</span> <span class="SCONJ">that</span> <span
+            class="PRON">nothing</span> <span class="ADV">more</span> <span class="VERB">happened</span><span
+            class="PUNCT">,</span> <span class="PRON">she</span> <span class="VERB">decided</span> <span
+            class="ADP">on</span> <span class="VERB">going</span> <span class="ADP">into</span> <span
+            class="DET">the</span> <span class="NOUN">garden</span> <span class="ADP">at</span> <span
+            class="ADV">once</span><span class="PUNCT">;</span> <span class="CCONJ">but</span><span
+            class="PUNCT">,</span> <span class="INTJ">alas</span> <span class="ADP">for</span> <span
+            class="ADJ">poor</span> <span class="PROPN">Alice</span><span class="PUNCT">!</span> <span
+            class="SCONJ">when</span> <span class="PRON">she</span> <span class="VERB">got</span> <span
+            class="ADP">to</span> <span class="DET">the</span> <span class="NOUN">door</span><span
+            class="PUNCT">,</span> <span class="PRON">she</span> <span class="VERB">found</span> <span
+            class="PRON">she</span> <span class="AUX">had</span> <span class="VERB">forgotten</span> <span
+            class="DET">the</span> <span class="ADJ">little</span> <span class="ADJ">golden</span> <span
+            class="NOUN">key</span><span class="PUNCT">,</span> <span class="CCONJ">and</span> <span
+            class="SCONJ">when</span> <span class="PRON">she</span> <span class="VERB">went</span> <span
+            class="ADV">back</span> <span class="ADP">to</span> <span class="DET">the</span> <span
+            class="NOUN">table</span> <span class="ADP">for</span> <span class="PRON">it</span><span
+            class="PUNCT">,</span> <span class="PRON">she</span> <span class="VERB">found</span> <span
+            class="PRON">she</span> <span class="AUX">could</span> <span class="PART">not</span> <span
+            class="ADV">possibly</span> <span class="VERB">reach</span> <span class="PRON">it</span><span
+            class="PUNCT">:</span> <span class="PRON">she</span> <span class="AUX">could</span> <span
+            class="VERB">see</span> <span class="PRON">it</span> <span class="ADV">quite</span> <span
+            class="ADV">plainly</span> <span class="ADP">through</span> <span class="DET">the</span> <span
+            class="NOUN">glass</span><span class="PUNCT">,</span> <span class="CCONJ">and</span> <span
+            class="PRON">she</span> <span class="VERB">tried</span> <span class="PRON">her</span> <span
+            class="ADJ">best</span> <span class="PART">to</span> <span class="VERB">climb</span> <span
+            class="ADP">up</span> <span class="NUM">one</span> <span class="ADP">of</span> <span class="DET">the</span>
+          <span class="NOUN">legs</span> <span class="ADP">of</span> <span class="DET">the</span> <span
+            class="NOUN">table</span><span class="PUNCT">,</span> <span class="CCONJ">but</span> <span
+            class="PRON">it</span> <span class="AUX">was</span> <span class="ADV">too</span> <span
+            class="ADJ">slippery</span><span class="PUNCT">;</span> <span class="CCONJ">and</span> <span
+            class="SCONJ">when</span> <span class="PRON">she</span> <span class="AUX">had</span> <span
+            class="VERB">tired</span> <span class="PRON">herself</span> <span class="ADP">out</span> <span
+            class="ADP">with</span> <span class="VERB">trying</span><span class="PUNCT">,</span> <span
+            class="DET">the</span> <span class="ADJ">poor</span> <span class="ADJ">little</span> <span
+            class="NOUN">thing</span> <span class="VERB">sat</span> <span class="ADP">down</span> <span
+            class="CCONJ">and</span> <span class="VERB">cried</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="PUNCT">“</span><span class="VERB">Come</span><span class="PUNCT">,</span> <span
+            class="PRON">there</span><span class="AUX">’s</span> <span class="DET">no</span> <span
+            class="NOUN">use</span> <span class="ADP">in</span> <span class="VERB">crying</span> <span
+            class="ADP">like</span> <span class="PRON">that</span><span class="PUNCT">!</span><span
+            class="PUNCT">”</span> <span class="VERB">said</span> <span class="PROPN">Alice</span> <span
+            class="ADP">to</span> <span class="PRON">herself</span><span class="PUNCT">,</span> <span
+            class="ADV">rather</span> <span class="ADV">sharply</span><span class="PUNCT">;</span> <span
+            class="PUNCT">“</span><span class="PRON">I</span> <span class="VERB">advise</span> <span
+            class="PRON">you</span> <span class="PART">to</span> <span class="VERB">leave</span> <span
+            class="ADP">off</span> <span class="DET">this</span> <span class="NOUN">minute</span><span
+            class="PUNCT">!</span><span class="PUNCT">”</span> <span class="PRON">She</span> <span
+            class="ADV">generally</span> <span class="VERB">gave</span> <span class="PRON">herself</span> <span
+            class="ADV">very</span> <span class="ADJ">good</span> <span class="NOUN">advice</span><span
+            class="PUNCT">,</span> <span class="PUNCT">(</span><span class="SCONJ">though</span> <span
+            class="PRON">she</span> <span class="ADV">very</span> <span class="ADV">seldom</span> <span
+            class="VERB">followed</span> <span class="PRON">it</span><span class="PUNCT">)</span><span
+            class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="ADV">sometimes</span> <span
+            class="PRON">she</span> <span class="VERB">scolded</span> <span class="PRON">herself</span> <span
+            class="ADV">so</span> <span class="ADV">severely</span> <span class="SCONJ">as</span> <span
+            class="PART">to</span> <span class="VERB">bring</span> <span class="NOUN">tears</span> <span
+            class="ADP">into</span> <span class="PRON">her</span> <span class="NOUN">eyes</span><span
+            class="PUNCT">;</span> <span class="CCONJ">and</span> <span class="SCONJ">once</span> <span
+            class="PRON">she</span> <span class="VERB">remembered</span> <span class="VERB">trying</span> <span
+            class="PART">to</span> <span class="VERB">box</span> <span class="PRON">her</span> <span
+            class="ADJ">own</span> <span class="NOUN">ears</span> <span class="ADP">for</span> <span
+            class="AUX">having</span> <span class="VERB">cheated</span> <span class="PRON">herself</span> <span
+            class="ADP">in</span> <span class="DET">a</span> <span class="NOUN">game</span> <span class="ADP">of</span>
+          <span class="NOUN">croquet</span> <span class="PRON">she</span> <span class="AUX">was</span> <span
+            class="VERB">playing</span> <span class="ADP">against</span> <span class="PRON">herself</span><span
+            class="PUNCT">,</span> <span class="SCONJ">for</span> <span class="DET">this</span> <span
+            class="ADJ">curious</span> <span class="NOUN">child</span> <span class="AUX">was</span> <span
+            class="ADV">very</span> <span class="ADJ">fond</span> <span class="ADP">of</span> <span
+            class="VERB">pretending</span> <span class="PART">to</span> <span class="AUX">be</span> <span
+            class="NUM">two</span> <span class="NOUN">people</span><span class="PUNCT">.</span> <span
+            class="PUNCT">“</span><span class="CCONJ">But</span> <span class="PRON">it</span><span class="AUX">’s</span>
+          <span class="DET">no</span> <span class="NOUN">use</span> <span class="ADV">now</span><span
+            class="PUNCT">,</span><span class="PUNCT">”</span> <span class="VERB">thought</span> <span
+            class="ADJ">poor</span> <span class="PROPN">Alice</span><span class="PUNCT">,</span> <span
+            class="PUNCT">“</span><span class="PART">to</span> <span class="VERB">pretend</span> <span
+            class="PART">to</span> <span class="AUX">be</span> <span class="NUM">two</span> <span
+            class="NOUN">people</span><span class="PUNCT">!</span> <span class="SCONJ">Why</span><span
+            class="PUNCT">,</span> <span class="PRON">there</span><span class="AUX">’s</span> <span
+            class="ADV">hardly</span> <span class="ADJ">enough</span> <span class="ADP">of</span> <span
+            class="PRON">me</span> <span class="VERB">left</span> <span class="PART">to</span> <span
+            class="VERB">make</span> <span class="NUM">one</span> <span class="ADJ">respectable</span> <span
+            class="NOUN">person</span><span class="PUNCT">!</span><span class="PUNCT">”</span>
+        </p>
+        <p>
+          <span class="ADV">Soon</span> <span class="PRON">her</span> <span class="NOUN">eye</span> <span
+            class="VERB">fell</span> <span class="ADP">on</span> <span class="DET">a</span> <span
+            class="ADJ">little</span> <span class="NOUN">glass</span> <span class="NOUN">box</span> <span
+            class="PRON">that</span> <span class="AUX">was</span> <span class="VERB">lying</span> <span
+            class="ADP">under</span> <span class="DET">the</span> <span class="NOUN">table</span><span
+            class="PUNCT">:</span> <span class="PRON">she</span> <span class="VERB">opened</span> <span
+            class="PRON">it</span><span class="PUNCT">,</span> <span class="CCONJ">and</span> <span
+            class="VERB">found</span> <span class="ADP">in</span> <span class="PRON">it</span> <span
+            class="DET">a</span> <span class="ADV">very</span> <span class="ADJ">small</span> <span
+            class="NOUN">cake</span><span class="PUNCT">,</span> <span class="ADP">on</span> <span
+            class="PRON">which</span> <span class="DET">the</span> <span class="NOUN">words</span> <span
+            class="PUNCT">“</span><span class="PROPN">EAT</span> <span class="PROPN">ME</span><span
+            class="PUNCT">”</span> <span class="AUX">were</span> <span class="ADV">beautifully</span> <span
+            class="VERB">marked</span> <span class="ADP">in</span> <span class="NOUN">currants</span><span
+            class="PUNCT">.</span> <span class="PUNCT">“</span><span class="INTJ">Well</span><span
+            class="PUNCT">,</span> <span class="PRON">I</span><span class="AUX">’ll</span> <span class="VERB">eat</span>
+          <span class="PRON">it</span><span class="PUNCT">,</span><span class="PUNCT">”</span> <span
+            class="VERB">said</span> <span class="PROPN">Alice</span><span class="PUNCT">,</span> <span
+            class="PUNCT">“</span><span class="CCONJ">and</span> <span class="SCONJ">if</span> <span
+            class="PRON">it</span> <span class="VERB">makes</span> <span class="PRON">me</span> <span
+            class="VERB">grow</span> <span class="ADJ">larger</span><span class="PUNCT">,</span> <span
+            class="PRON">I</span> <span class="AUX">can</span> <span class="VERB">reach</span> <span
+            class="DET">the</span> <span class="NOUN">key</span><span class="PUNCT">;</span> <span
+            class="CCONJ">and</span> <span class="SCONJ">if</span> <span class="PRON">it</span> <span
+            class="VERB">makes</span> <span class="PRON">me</span> <span class="VERB">grow</span> <span
+            class="ADJ">smaller</span><span class="PUNCT">,</span> <span class="PRON">I</span> <span
+            class="AUX">can</span> <span class="VERB">creep</span> <span class="ADP">under</span> <span
+            class="DET">the</span> <span class="NOUN">door</span><span class="PUNCT">;</span> <span
+            class="ADV">so</span> <span class="CCONJ">either</span> <span class="NOUN">way</span> <span
+            class="PRON">I</span><span class="AUX">’ll</span> <span class="VERB">get</span> <span
+            class="ADP">into</span> <span class="DET">the</span> <span class="NOUN">garden</span><span
+            class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="PRON">I</span> <span
+            class="AUX">do</span><span class="ADV">n’t</span> <span class="NOUN">care</span> <span
+            class="PRON">which</span> <span class="VERB">happens</span><span class="PUNCT">!</span><span
+            class="PUNCT">”</span>
+        </p>
+        <p>
+          <span class="PRON">She</span> <span class="VERB">ate</span> <span class="DET">a</span> <span
+            class="ADJ">little</span> <span class="NOUN">bit</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="VERB">said</span> <span class="ADV">anxiously</span> <span
+            class="ADP">to</span> <span class="PRON">herself</span><span class="PUNCT">,</span> <span
+            class="PUNCT">“</span><span class="DET">Which</span> <span class="NOUN">way</span><span
+            class="PUNCT">?</span> <span class="DET">Which</span> <span class="NOUN">way</span><span
+            class="PUNCT">?</span><span class="PUNCT">”</span><span class="PUNCT">,</span> <span
+            class="VERB">holding</span> <span class="PRON">her</span> <span class="NOUN">hand</span> <span
+            class="ADP">on</span> <span class="DET">the</span> <span class="NOUN">top</span> <span class="ADP">of</span>
+          <span class="PRON">her</span> <span class="NOUN">head</span> <span class="PART">to</span> <span
+            class="VERB">feel</span> <span class="DET">which</span> <span class="NOUN">way</span> <span
+            class="PRON">it</span> <span class="AUX">was</span> <span class="VERB">growing</span><span
+            class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="PRON">she</span> <span
+            class="AUX">was</span> <span class="ADV">quite</span> <span class="ADJ">surprised</span> <span
+            class="PART">to</span> <span class="VERB">find</span> <span class="SCONJ">that</span> <span
+            class="PRON">she</span> <span class="VERB">remained</span> <span class="DET">the</span> <span
+            class="ADJ">same</span> <span class="NOUN">size</span><span class="PUNCT">:</span> <span
+            class="PART">to</span> <span class="AUX">be</span> <span class="ADJ">sure</span><span class="PUNCT">,</span>
+          <span class="PRON">this</span> <span class="ADV">generally</span> <span class="VERB">happens</span> <span
+            class="SCONJ">when</span> <span class="NUM">one</span> <span class="VERB">eats</span> <span
+            class="NOUN">cake</span><span class="PUNCT">,</span> <span class="CCONJ">but</span> <span
+            class="PROPN">Alice</span> <span class="AUX">had</span> <span class="VERB">got</span> <span
+            class="ADV">so</span> <span class="ADJ">much</span> <span class="ADP">into</span> <span
+            class="DET">the</span> <span class="NOUN">way</span> <span class="ADP">of</span> <span
+            class="VERB">expecting</span> <span class="PRON">nothing</span> <span class="CCONJ">but</span> <span
+            class="ADV">out</span><span class="PUNCT">-</span><span class="ADP">of</span><span
+            class="PUNCT">-</span><span class="DET">the</span><span class="PUNCT">-</span><span class="NOUN">way</span>
+          <span class="NOUN">things</span> <span class="PART">to</span> <span class="VERB">happen</span><span
+            class="PUNCT">,</span> <span class="SCONJ">that</span> <span class="PRON">it</span> <span
+            class="VERB">seemed</span> <span class="ADV">quite</span> <span class="ADJ">dull</span> <span
+            class="CCONJ">and</span> <span class="ADJ">stupid</span> <span class="SCONJ">for</span> <span
+            class="NOUN">life</span> <span class="PART">to</span> <span class="VERB">go</span> <span
+            class="ADP">on</span> <span class="ADP">in</span> <span class="DET">the</span> <span
+            class="ADJ">common</span> <span class="NOUN">way</span><span class="PUNCT">.</span>
+        </p>
+        <p>
+          <span class="ADV">So</span> <span class="PRON">she</span> <span class="VERB">set</span> <span
+            class="PART">to</span> <span class="VERB">work</span><span class="PUNCT">,</span> <span
+            class="CCONJ">and</span> <span class="ADV">very</span> <span class="ADV">soon</span> <span
+            class="VERB">finished</span> <span class="ADP">off</span> <span class="DET">the</span> <span
+            class="NOUN">cake</span><span class="PUNCT">.</span>
+        </p>
+      </section>
+
+      <section id="ch2" class="book-section">
+        <h4 class="section-label">Chapter 2</h4>
+        <h2>The Pool of Tears</h2>
+        <p>
+
+        </p>
+      </section>
+
+      <!-- ── CHAPTER 3 ── -->
+      <section id="ch3" class="book-section">
+        <h4 class="section-label">Chapter 3</h4>
+        <h2>A Caucus-Race and a Long Tale</h2>
+
+      </section>
+
+      <!-- ── CHAPTER 4 ── -->
+      <section id="ch4" class="book-section">
+        <h4 class="section-label">Chapter 4</h4>
+        <h2>The Rabbit Sends in a Little Bill</h2>
+
+      </section>
+
+      <!-- ── CHAPTER 5 ── -->
+      <section id="ch5" class="book-section">
+        <h4 class="section-label">Chapter 5</h4>
+        <h2>Advice from a Caterpillar</h2>
+
+      </section>
+
+      <!-- ── CHAPTER 6 ── -->
+      <section id="ch6" class="book-section">
+        <h4 class="section-label">Chapter 6</h4>
+        <h2>Pig and Pepper</h2>
+
+      </section>
+
+      <!-- ── CHAPTER 7 ── -->
+      <section id="ch7" class="book-section">
+        <h4 class="section-label">Chapter 7</h4>
+        <h2>A Mad Tea-Party</h2>
+
+      </section>
+
+      <!-- ── CHAPTER 8 ── -->
+      <section id="ch8" class="book-section">
+        <h4 class="section-label">Chapter 8</h4>
+        <h2>The Queen's Croquet-Ground</h2>
+
+      </section>
+
+      <!-- ── CHAPTER 9 ── -->
+      <section id="ch9" class="book-section">
+        <h4 class="section-label">Chapter 9</h4>
+        <h2>The Mock Turtle's Story</h2>
+
+      </section>
+
+      <!-- ── CHAPTER 10 ── -->
+      <section id="ch10" class="book-section">
+        <h4 class="section-label">Chapter 10</h4>
+        <h2>The Lobster Quadrille</h2>
+
+      </section>
+
+      <!-- ── CHAPTER 11 ── -->
+      <section id="ch11" class="book-section">
+        <h4 class="section-label">Chapter 11</h4>
+        <h2>Who Stole the Tarts?</h2>
+
+      </section>
+
+      <!-- ── CHAPTER 12 ── -->
+      <section id="ch12" class="book-section">
+        <h4 class="section-label">Chapter 12</h4>
+        <h2>Alice's Evidence</h2>
+
+      </section>
+  </main>
+
+  <script src="Side-bar.js">
+  </script>
+  <div id="pos-tooltip"></div>
+  <script>
+  </script>
+  <!-- traduction script above -->
+  <script src="translation.js">
+  
+  </script>
+  
+</body>
+
+</html>

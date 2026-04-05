@@ -1,0 +1,1134 @@
+*,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: var(--leading);
+      word-spacing: 0.2rem;
+      display: flex;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    p {
+      text-indent: 1rem;
+      /* Add 16px to the left of the first word of the new paragraph */
+    }
+
+    /* ─────────────────────────────────────────
+       TOKENS — DARK (default)
+    ───────────────────────────────────────── */
+    :root {
+      /* --font: 'Iosevka Charon Mono', monospace; */
+      --font: "Nunito", sans-serif;
+      --bg: #1c1a15;
+      --ink: #e8dfc8;
+      --muted: #a09880;
+      --muted-dim: #6e6858;
+      --border: #2e2b22;
+      --sidebar-bg: #17150f;
+      /* --placeholder-border: #353020; */
+      /* --placeholder-color: #4a4535; */
+      --sidebar-w: 360px;
+      --page-max: 900px;
+      --leading: 1.85;
+    }
+
+    /* ─────────────────────────────────────────
+       TOKENS — LIGHT (parchment)
+    ───────────────────────────────────────── */
+    html.light {
+      --bg: #f5f2eb;
+      --ink: #1a1a1a;
+      --muted: #888;
+      --muted-dim: #bbb;
+      --border: #d6d0c4;
+      --sidebar-bg: #f5f2eb;
+      /* --placeholder-border: #ccc; */
+      /* --placeholder-color: #bbb; */
+    }
+
+    /* ── LES 17 CLASSES POS ── */
+    .PROPN {
+      color: #4DC0FF;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .NOUN {
+      color: #4DC0FF;
+      cursor: pointer;
+    }
+
+    .VERB {
+      color: #FF4FD8;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .AUX {
+      color: #FF4FD8;
+      cursor: pointer;
+    }
+
+    .ADJ {
+      color: #5FD35F;
+      cursor: pointer;
+    }
+
+    .ADV {
+      color: #E67A23;
+      cursor: pointer;
+    }
+
+    .PRON {
+      color: #FF5D5C;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* DET & also Article */
+    .DET {
+      color: #F1D76F;
+      cursor: pointer;
+    }
+
+    .ADP {
+      color: #B07CFF;
+      cursor: pointer;
+    }
+
+    .CCONJ {
+      color: #3A6ED5;
+      cursor: pointer;
+    }
+
+    .SCONJ {
+      color: #3A6ED5;
+      cursor: pointer;
+    }
+
+    .PART {
+      color: #D8A63A;
+      cursor: pointer;
+    }
+
+    .INTJ {
+      color: #4DE0D2;
+      cursor: pointer;
+    }
+
+    .NUM {
+      color: #9BE564;
+      cursor: pointer;
+    }
+
+    .PUNCT {
+      color: #B0B0B0;
+      cursor: pointer;
+      font-weight: 500;
+      padding-left: 0.07rem;
+      padding-right: 0.07rem;
+    }
+
+    .SYM {
+      color: #A0A0A0;
+      cursor: pointer;
+    }
+
+    .X {
+      color: #e8dfc8;
+      opacity: 0.45;
+      cursor: pointer;
+    }
+
+    .SPACE {
+      color: transparent;
+    }
+
+    .LINK {
+      color: #3A6ED5;
+      cursor: pointer;
+      text-decoration: underline;
+      font-style: italic;
+    }
+
+    /* La barre entière */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    /* Le fond de la barre (ton bleu sombre) */
+    ::-webkit-scrollbar-track {
+      background: #050C16;
+      /* Un bleu plus sombre que ton fond "Abysse" */
+    }
+
+    /* La partie qui bouge (ton turquoise) */
+    ::-webkit-scrollbar-thumb {
+      background: #504A42;
+      border-radius: 5px;
+      border: 1px #050C16;
+    }
+
+    /* Au survol pour plus de dynamisme */
+    ::-webkit-scrollbar-thumb:hover {
+      /* background: #00E5FF; */
+    }
+
+    /* ── SIDEBAR ── */
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
+      overflow-y: auto;
+      padding: 2.5rem 1.5rem 2.5rem 1.8rem;
+      border-right: 1px solid var(--border);
+      background: #101827;
+      filter: brightness(1.10);
+      box-shadow: 5px 0 1rem -5px #ffffff06;
+      z-index: 200;
+      transform: translateX(0);
+      transition: transform 0.25s ease, background 0.3s ease, border-color 0.3s ease;
+    }
+
+    #sidebar.hidden {
+      transform: translateX(-100%);
+    }
+
+    #sidebar .site-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       SIDEBAR TABS
+    ───────────────────────────────────────── */
+    #sidebar-tabs {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.4rem;
+      cursor: pointer;
+      text-transform: lowercase;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--muted);
+      color: var(--ink);
+    }
+
+    .tab-btn.active {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       SIDEBAR NAV
+    ───────────────────────────────────────── */
+
+    #sidebar nav ul {
+      list-style: none;
+    }
+
+    #sidebar nav ul li {
+      margin-bottom: 0.15rem;
+    }
+
+    #sidebar nav ul li a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #sidebar nav ul li a:hover {
+      transform: scale(1.02) translateX(-1px);
+      transition: 0.4s;
+      filter: brightness(1.7);
+    }
+
+    #sidebar nav ul li a:active {
+      transform: scale(1.0) translateX(0px);
+      transition: 0.1s;
+      filter: brightness(1);
+    }
+
+    /* Part label */
+    #sidebar nav .part-label {
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted-dim);
+      margin-top: 1.4rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    #sidebar nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      transition: color 0.15s;
+      display: block;
+      padding: 0.12rem 0;
+    }
+
+    #sidebar nav a:hover,
+    #sidebar nav a.active {
+      color: var(--ink);
+    }
+
+    /* ─────────────────────────────────────────
+       LEGEND PANEL
+    ───────────────────────────────────────── */
+    .legend-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .legend-swatch {
+      display: inline-block;
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 2px;
+      flex-shrink: 0;
+      position: relative;
+      top: 0.05rem;
+    }
+
+    .legend-name {
+      color: var(--ink);
+      min-width: 7rem;
+      flex-shrink: 0;
+      font-size: 0.85rem;
+    }
+
+    .legend-example {
+      font-size: 0.82rem;
+      opacity: 0.9;
+    }
+
+    /* ─────────────────────────────────────────
+       THEME TOGGLE BUTTON
+    ───────────────────────────────────────── */
+    #theme-toggle {
+      display: block;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font);
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    #theme-toggle:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    /* ─────────────────────────────────────────
+       HAMBURGER (mobile only)
+    ───────────────────────────────────────── */
+    #menu-toggle {
+      display: block;
+      position: fixed;
+      top: 1.2rem;
+      left: 1.2rem;
+      z-index: 300;
+      background: var(--muted);
+      border: 1px solid var(--muted);
+      padding: 0.4rem 0.6rem;
+      font-family: var(--font);
+      font-size: 0.75rem;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      color: var(--bg);
+      transition: background 0.3s ease, border-color 0.3s ease, left 0.25s ease;
+    }
+
+    /* ─────────────────────────────────────────
+       BACKDROP
+    ───────────────────────────────────────── */
+    #backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 150;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    #backdrop.visible {
+      opacity: 1;
+    }
+
+    /* ─────────────────────────────────────────
+       MAIN CONTENT
+    ───────────────────────────────────────── */
+    #content {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      min-height: 100vh;
+      transition: margin-left 0.25s ease;
+    }
+
+    .book-section {
+      padding: 4rem 1.4rem 5rem;
+    }
+
+    body.sidebar-hidden #content {
+      margin-left: 0;
+    }
+
+    /* Button always top-left, never moves */
+
+    /* Every section is a "page" */
+    .book-section {
+      max-width: var(--page-max);
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.3s ease;
+    }
+
+    .book-section:last-child {
+      border-bottom: none;
+    }
+
+    /* ─────────────────────────────────────────
+       COVER
+    ───────────────────────────────────────── */
+    #cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    #cover h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    #cover .byline {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      line-height: 2;
+    }
+
+    /* ─────────────────────────────────────────
+       COPYRIGHT
+    ───────────────────────────────────────── */
+    #copyright p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+
+    #copyright a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s;
+    }
+
+    #copyright a:hover {
+      color: var(--ink);
+    }
+
+    /* ─────────────────────────────────────────
+       TABLE OF CONTENTS
+    ───────────────────────────────────────── */
+    #toc h2 {
+      font-size: 2.1rem;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 2.5rem;
+      font-weight: 700;
+    }
+
+    .book-section .toc-part {
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .toc-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .toc-entry a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 1.2rem;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+
+    .toc-entry a:hover {
+      opacity: 1;
+    }
+
+    .toc-dots {
+      flex: 1;
+      border-bottom: 0.14rem dotted var(--muted);
+      margin: 0 0.6rem 0.3rem;
+    }
+
+    .toc-page {
+      font-size: 1.1rem;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    /* ─────────────────────────────────────────
+       SECTION HEADINGS
+    ───────────────────────────────────────── */
+    .section-label {
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0rem;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .book-section h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .book-section h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ─────────────────────────────────────────
+       BODY TEXT
+    ───────────────────────────────────────── */
+    .book-section p {
+      font-size: 1.1rem;
+      line-height: var(--leading);
+      margin-bottom: 1.4rem;
+      font-weight: 400;
+    }
+
+    .book-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Signature / closing line */
+    .signature {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2rem;
+      text-align: right;
+      font-style: italic;
+    }
+
+    /* Part divider */
+    .part-divider {
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.3s ease;
+    }
+
+    .part-divider .part-number {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .part-divider h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+
+    /* ─────────────────────────────────────────
+       PAGE BREAK DIVIDERS
+    ───────────────────────────────────────── */
+    .page-break {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 3rem 0 3rem;
+    }
+
+    .page-break::before,
+    .page-break::after {
+      content: '';
+      flex: 1;
+      height: 0.1rem;
+      background: var(--border);
+    }
+
+    .end-page-num {
+      display: block;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      #sidebar {
+        width: 100vw;
+        box-shadow: none;
+      }
+
+      #cover {
+        padding: 5rem 1.4rem 4rem;
+      }
+    }
+
+    /* ─────────────────────────────────────────
+       POS TOOLTIP (JS-driven, fixed position)
+    ───────────────────────────────────────── */
+    #pos-tooltip {
+      position: fixed;
+      pointer-events: none;
+      font-family: var(--font);
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: #CCC;
+      text-shadow: 0px 0px 10px #9999ff40;
+      white-space: nowrap;
+      z-index: 9999;
+      display: none;
+    }
+
+    .book-section {
+      /* Crée une zone de confort en haut lors du défilement auto */
+      scroll-margin-top: 0.25rem;
+    }
+
+    :root {
+      --bg: #121212;
+      --ink: #E0E0E0;
+      --sidebar-bg: #000000;
+    }
+
+    .NOUN,
+    .PROPN {
+      color: #FF7A7A;
+    }
+
+    /* Corail (Priorité 1) */
+    .VERB,
+    .AUX {
+      color: #FFB37A;
+    }
+
+    /* Mandarine (Priorité 2) */
+    .ADJ {
+      color: #FFEC7A;
+    }
+
+    /* Jaune Solaire */
+    .ADV {
+      color: #C9FF7A;
+    }
+
+    /* Vert Tendre */
+    .PRON {
+      color: #7AFF8A;
+    }
+
+    /* Menthe */
+    .NUM {
+      color: #7AFFD1;
+    }
+
+    /* Turquoise */
+    .SCONJ,
+    .CCONJ {
+      color: #7AEBFF;
+    }
+
+    /* Cyan */
+    .ADP {
+      color: #7A9CFF;
+    }
+
+    /* Bleu Azur */
+    .DET {
+      color: #997AFF;
+    }
+
+    /* Violet */
+    .PART {
+      color: #E07AFF;
+    }
+
+    /* Magenta */
+    .INTJ {
+      color: #FF7AEB;
+    }
+
+    /* Rose */
+    .PUNCT,
+    .SYM,
+    .X {
+      color: #E0E0E0;
+    }
+
+    /* Gris Perle */
+
+    :root {
+      --bg: #0F172A;
+      --ink: #CBD5E1;
+      --sidebar-bg: #090E1A;
+    }
+
+    .NOUN,
+    .PROPN {
+      color: #FF5F5F;
+    }
+
+    /* Rouge Électrique */
+    .VERB,
+    .AUX {
+      color: #FF9F5F;
+    }
+
+    /* Orange Électrique */
+    .ADJ {
+      color: #DFFF5F;
+    }
+
+    /* Citron Électrique */
+    .ADV {
+      color: #5FFF9F;
+    }
+
+    /* Émeraude Électrique */
+    .PRON {
+      color: #5FFFFF;
+    }
+
+    /* Cyan Électrique */
+    .NUM {
+      color: #5F9FFF;
+    }
+
+    /* Bleu Électrique */
+    .SCONJ,
+    .CCONJ {
+      color: #9F5FFF;
+    }
+
+    /* Améthyste Électrique */
+    .ADP {
+      color: #FF5FFF;
+    }
+
+    /* Fuchsia Électrique */
+    .DET {
+      color: #FF5F9F;
+    }
+
+    /* Rubis Électrique */
+    .PART {
+      color: #FFFF5F;
+    }
+
+    /* Soufre Électrique */
+    .INTJ {
+      color: #5FFFD7;
+    }
+
+    /* Menthe Électrique */
+    .PUNCT,
+    .SYM,
+    .X {
+      color: #CBD5E1;
+      opacity: 0.9;
+    }
+
+    /* Gris Glacé */
+
+
+    :root {
+      --bg: #0A192F;
+      --ink: #BDBDBD;
+      --sidebar-bg: #050C16;
+    }
+
+    .NOUN,
+    .PROPN {
+      color: #FFA07A;
+    }
+
+    /* Saumon */
+    .VERB,
+    .AUX {
+      color: #FFD700;
+    }
+
+    /* Or */
+    .ADJ {
+      color: #ADFF2F;
+    }
+
+    /* Chartreuse */
+    .ADV {
+      color: #00FF7F;
+    }
+
+    /* Vert Printemps */
+    .PRON {
+      color: #00FFFF;
+    }
+
+    /* Aqua */
+    .NUM {
+      color: #87CEFA;
+    }
+
+    /* Bleu Ciel */
+    .SCONJ,
+    .CCONJ {
+      color: #B0C4DE;
+    }
+
+    /* Bleu Acier Clair */
+    .ADP {
+      color: #DDA0DD;
+    }
+
+    /* Prune Clair */
+    .DET {
+      color: #FF69B4;
+    }
+
+    /* Rose Chaud */
+    .PART {
+      color: #F08080;
+    }
+
+    /* Corail Clair */
+    .INTJ {
+      color: #EEE8AA;
+    }
+
+    /* Pâle Doré */
+    .PUNCT,
+    .SYM,
+    .X {
+      color: #BDBDBD;
+      opacity: 0.9;
+    }
+
+    /* Gris Argent */
+
+
+    :root {
+      --bg: #1A202C;
+      --ink: #94A3B8;
+      --sidebar-bg: #131720;
+    }
+
+    .NOUN,
+    .PROPN {
+      color: #F87171;
+    }
+
+    /* Rouge Doux */
+    .VERB,
+    .AUX {
+      color: #FB923C;
+    }
+
+    /* Orange Doux */
+    .ADJ {
+      color: #FACC15;
+    }
+
+    /* Jaune Doux */
+    .ADV {
+      color: #4ADE80;
+    }
+
+    /* Vert Doux */
+    .PRON {
+      color: #2DD4BF;
+    }
+
+    /* Sarcelle */
+    .NUM {
+      color: #38BDF8;
+    }
+
+    /* Bleu Doux */
+    .SCONJ,
+    .CCONJ {
+      color: #818CF8;
+    }
+
+    /* Indigo Doux */
+    .ADP {
+      color: #C084FC;
+    }
+
+    /* Violet Doux */
+    .DET {
+      color: #F472B6;
+    }
+
+    /* Rose Doux */
+    .PART {
+      color: #FB7185;
+    }
+
+    /* Rose Rougeâtre */
+    .INTJ {
+      color: #A3E635;
+    }
+
+    /* Lime Doux */
+    .PUNCT,
+    .SYM,
+    .X {
+      color: #94A3B8;
+      opacity: 0.9;
+    }
+
+    /* Gris Ardoise */
+
+    :root {
+      --bg: #101827;
+      --ink: #D1D5DB;
+      --sidebar-bg: #101827;
+    }
+
+    .NOUN,
+    .PROPN {
+      color: #FCA5A5;
+    }
+
+    /* Quartz Rose */
+    .VERB,
+    .AUX {
+      color: #FDBA74;
+    }
+
+    /* Topaze */
+    .ADJ {
+      color: #FDE047;
+    }
+
+    /* Citrine */
+    .ADV {
+      color: #86EFAC;
+    }
+
+    /* Péridot */
+    .PRON {
+      color: #67E8F9;
+    }
+
+    /* Aigue-marine */
+    .NUM {
+      color: #93C5FD;
+    }
+
+    /* Saphir Clair */
+    .SCONJ,
+    .CCONJ {
+      color: #A5B4FC;
+    }
+
+    /* Iolite */
+    .ADP {
+      color: #D8B4FE;
+    }
+
+    /* Kunzite */
+    .DET {
+      color: #F9A8D4;
+    }
+
+    /* Morganite */
+    .PART {
+      color: #FDA4AF;
+    }
+
+    /* Spinelle */
+    .INTJ {
+      color: #BEF264;
+    }
+
+    /* Jade */
+    .PUNCT,
+    .SYM,
+    .X {
+      color: #D1D5DB;
+      opacity: 0.9;
+    }
+
+    /* Gris Platine */
+
+    :root {
+      --bg: #101827;
+      --ink: #D1D5DB;
+      --sidebar-bg: #101827;
+    }
+
+    .NOUN,
+    .PROPN {
+      color: #67E8F9;
+    }
+
+    /* Aigue-marine */
+    .VERB,
+    .AUX {
+      color: #F9A8D4;
+    }
+
+    /* Morganite */
+    .ADJ {
+      color: #86EFAC;
+    }
+
+    /* Péridot */
+    .ADV {
+      color: #FDBA74;
+    }
+
+    /* Topaze */
+    .PRON {
+      color: #FCA5A5;
+    }
+
+    /* Quartz Rose */
+    .NUM {
+      color: #BEF264;
+    }
+
+    /* Jade */
+    .SCONJ,
+    .CCONJ {
+      color: #A5B4FC;
+    }
+
+    /* Iolite */
+    .ADP {
+      color: #D8B4FE;
+    }
+
+    /* Kunzite */
+    .DET {
+      color: #FDE047;
+    }
+
+    /* Citrine */
+    .PART {
+      color: #FDA4AF;
+    }
+
+    /* Spinelle */
+    .INTJ {
+      color: #93C5FD;
+    }
+
+    /* Saphir Clair */
+    .PUNCT,
+    .SYM,
+    .X {
+      color: #D1D5DB;
+      opacity: 0.9;
+    }
+#translation-overlay {
+    position: absolute;
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    z-index: 10000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    max-width: 300px;
+    pointer-events: none; /* Pour ne pas gêner la souris */
+    border: 1px solid #555;
+    line-height: 1.4;
+}
