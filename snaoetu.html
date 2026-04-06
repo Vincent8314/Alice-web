@@ -1,0 +1,236 @@
+<script>
+  const universalTags = {
+  NOUN: {
+
+    subtags: {
+      NN: "Noun, singular or mass",
+      NNS: "Noun, plural"
+    }
+  },
+  PROPN: {
+    description: "Proper nouns",
+    subtags: {
+      NNP: "Proper noun, singular",
+      NNPS: "Proper noun, plural"
+    }
+  },
+  VERB: {
+    description: "Verbs, base and inflected forms",
+    subtags: {
+      VB: "Verb, base form",
+      VBD: "Verb, past tense",
+      VBG: "Verb, gerund or present participle",
+      VBN: "Verb, past participle",
+      VBP: "Verb, non-3rd person singular present",
+      VBZ: "Verb, 3rd person singular present"
+    }
+  },
+  AUX: {
+    description: "Auxiliary or modal verbs",
+    subtags: {
+      MD: "Modal verb"
+    }
+  },
+  ADJ: {
+    description: "Adjectives",
+    subtags: {
+      JJ: "Adjective, base",
+      JJR: "Adjective, comparative",
+      JJS: "Adjective, superlative"
+    }
+  },
+  ADV: {
+    description: "Adverbs",
+    subtags: {
+      RB: "Adverb, base",
+      RBR: "Adverb, comparative",
+      RBS: "Adverb, superlative",
+      WRB: "Wh-adverb"
+    }
+  },
+  PRON: {
+    description: "Pronouns",
+    subtags: {
+      PRP: "Personal pronoun",
+      PRP$: "Possessive pronoun",
+      WP: "Wh-pronoun",
+      WP$: "Possessive wh-pronoun",
+      EX: "Existential there"
+    }
+  },
+  DET: {
+    description: "Determiners",
+    subtags: {
+      DT: "Determiner",
+      PDT: "Predeterminer",
+      WDT: "Wh-determiner"
+    }
+  },
+  ADP: {
+    description: "Prepositions / postpositions",
+    subtags: {
+      IN: "Preposition or subordinating conjunction"
+    }
+  },
+  CCONJ: {
+    description: "Coordinating conjunctions",
+    subtags: {
+      CC: "Coordinating conjunction"
+    }
+  },
+  SCONJ: {
+    description: "Subordinating conjunctions",
+    subtags: {
+      IN: "Subordinating conjunction (shared with ADP)"
+    }
+  },
+  PART: {
+    description: "Particles",
+    subtags: {
+      RP: "Particle",
+      TO: "'to' particle",
+      POS: "Possessive ending"
+    }
+  },
+  INTJ: {
+    description: "Interjections",
+    subtags: {
+      UH: "Interjection"
+    }
+  },
+  NUM: {
+    description: "Numbers",
+    subtags: {
+      CD: "Cardinal number"
+    }
+  },
+  PUNCT: {
+    description: "Punctuation",
+    subtags: {
+      ".": "Sentence-final punctuation",
+      ",": "Comma",
+      ":": "Colon or ellipsis",
+      "(": "Left bracket",
+      ")": "Right bracket",
+      '"': "Quotation mark"
+    }
+  },
+  SYM: {
+    description: "Symbols",
+    subtags: {
+      SYM: "Symbol",
+      "#": "Pound sign",
+      "$": "Dollar sign"
+    }
+  },
+  X: {
+    description: "Other / Unknown",
+    subtags: {
+      FW: "Foreign word",
+      LS: "List item marker"
+    }
+  }
+};
+</script>
+const universalTags = {
+  NN: "Noun", // NN: "Noun, singular or mass"
+  NNS: "Noun", // NNS: "Noun, plural"
+  NNP: "Proper noun", // NNP: "Proper noun, singular"
+  NNPS: "Proper noun", // NNPS: "Proper noun, plural"
+  VB: "Verb", // VB: "Verb, base form"
+  VBD: "Verb", // VBD: "Verb, past tense"
+  VBG: "Verb", // VBG: "Verb, gerund or present participle"
+  VBN: "Verb", // VBN: "Verb, past participle"
+  VBP: "Verb", // VBP: "Verb, non-3rd person singular present"
+  VBZ: "Verb", // VBZ: "Verb, 3rd person singular present"
+  MD: "Modal verb", // MD: "Modal verb"
+  JJ: "Adjective", // JJ: "Adjective, base"
+  JJR: "Adjective", // JJR: "Adjective, comparative"
+  JJS: "Adjective", // JJS: "Adjective, superlative"
+  RB: "Adverb", // RB: "Adverb, base"
+  RBR: "Adverb", // RBR: "Adverb, comparative"
+  RBS: "Adverb", // RBS: "Adverb, superlative"
+  WRB: "Adverb", // WRB: "Wh-adverb"
+  PRP: "Pronoun", // PRP: "Personal pronoun"
+  PRP$: "Pronoun", // PRP$: "Possessive pronoun"
+  WP: "Pronoun", // WP: "Wh-pronoun"
+  WP$: "Pronoun", // WP$: "Possessive wh-pronoun"
+  EX: "Pronoun", // EX: "Existential there"
+  DT: "Determiner", // DT: "Determiner"
+  PDT: "Determiner", // PDT: "Predeterminer"
+  WDT: "Determiner", // WDT: "Wh-determiner"
+  IN: "Preposition", // IN: "Preposition or subordinating conjunction"
+  CC: "Conjunction", // CC: "Coordinating conjunction"
+  RP: "Particle", // RP: "Particle"
+  TO: "Particle", // TO: "'to' particle"
+  POS: "Particle", // POS: "Possessive ending"
+  UH: "Interjection", // UH: "Interjection"
+  CD: "Number", // CD: "Cardinal number"
+  ".": "Punctuation", // .: "Sentence-final punctuation"
+  ",": "Punctuation", // ,: "Comma"
+  ":": "Punctuation", // :: "Colon or ellipsis"
+  "(": "Punctuation", // (: "Left bracket"
+  ")": "Punctuation", // ): "Right bracket"
+  '"': "Punctuation", // ": "Quotation mark"
+  SYM: "Symbol", // SYM: "Symbol"
+  "#": "Symbol", // #: "Pound sign"
+  "$": "Symbol", // $: "Dollar sign"
+  FW: "Other", // FW: "Foreign word"
+  LS: "Other" // LS: "List item marker"
+};
+<script>
+const universalTags = {
+  NN: "Noun", NNS: "Noun", NNP: "Proper noun", NNPS: "Proper noun",
+  VB: "Verb", VBD: "Verb", VBG: "Verb", VBN: "Verb", VBP: "Verb", VBZ: "Verb",
+  MD: "Modal verb",
+  JJ: "Adjective", JJR: "Adjective", JJS: "Adjective",
+  RB: "Adverb", RBR: "Adverb", RBS: "Adverb", WRB: "Adverb",
+  PRP: "Pronoun", "PRP$": "Pronoun", WP: "Pronoun", "WP$": "Pronoun", EX: "Pronoun",
+  DT: "Determiner", PDT: "Determiner", WDT: "Determiner",
+  IN: "Preposition", CC: "Conjunction",
+  RP: "Particle", TO: "Particle", POS: "Particle",
+  UH: "Interjection",
+  CD: "Number",
+  ".": "Punctuation", ",": "Punctuation", ":": "Punctuation", "(": "Punctuation", ")": "Punctuation", '"': "Punctuation",
+  SYM: "Symbol", "#": "Symbol", "$": "Symbol",
+  FW: "Other", LS: "Other"
+};
+
+const tooltip = document.getElementById('pos-tooltip');
+
+document.addEventListener('mouseover', e => {
+  const span = e.target.closest('span');
+  if (!span) { 
+    tooltip.style.display = 'none'; 
+    return; 
+  }
+
+  // ✅ Récupère la valeur data-pos
+  const pos = span.dataset.pos;
+  if (!pos || !(pos in universalTags)) {
+    tooltip.style.display = 'none';
+    return;
+  }
+
+  // ✅ Affiche exactement le texte défini dans la liste
+  tooltip.textContent = universalTags[pos];
+  tooltip.style.display = 'block';
+
+  // Positionne le tooltip au-dessus du mot
+  const rect = span.getBoundingClientRect();
+  const tipW = tooltip.offsetWidth;
+  const centeredLeft = rect.left + rect.width / 2 - tipW / 2;
+  tooltip.style.left = Math.max(4, centeredLeft) + 'px';
+  tooltip.style.top = (rect.top - 13) + 'px';
+});
+
+document.addEventListener('mouseout', e => {
+  const span = e.target.closest('span');
+  if (!span) return;
+
+  const pos = span.dataset.pos;
+  if (pos && pos in universalTags) {
+    tooltip.style.display = 'none';
+  }
+});
+</script>

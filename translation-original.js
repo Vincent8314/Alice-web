@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════════════
-   SYSTEME DE TRADUCTION - MODE SECURISE (NETLIFY) with message for only word !!!
+   SYSTEME DE TRADUCTION - MODE SECURISE (NETLIFY)
    ══════════════════════════════════════════════ */
 
 console.log("Système de traduction via Netlify Functions prêt.");
@@ -45,10 +45,6 @@ document.addEventListener('mouseup', async (e) => {
             console.error("Erreur Fetch :", err);
             showTranslationTooltip(selection, "Erreur de connexion serveur.");
         }
-
-    } else {
-        // Sélection trop courte — on invite l'utilisateur à sélectionner un peu plus
-        showTranslationTooltip(selection, "Need more context — try selecting a few words.");
     }
 });
 

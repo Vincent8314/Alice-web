@@ -1,0 +1,1135 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alice In Wonderland - Lewis Carroll</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Iosevka+Charon+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+  <style>
+      *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: var(--leading);
+      word-spacing: 0.2rem;
+      display: flex;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    p {
+      text-indent: 1rem; /* Add 16px to the left of the first word of the new paragraph */
+    }
+
+    /* ─────────────────────────────────────────
+       TOKENS — DARK (default)
+    ───────────────────────────────────────── */
+    :root {
+      /* --font: 'Iosevka Charon Mono', monospace; */
+      --font: "Nunito", sans-serif;
+      --bg: #1c1a15;
+      --ink: #e8dfc8;
+      --muted: #a09880;
+      --muted-dim: #6e6858;
+      --border: #2e2b22;
+      --sidebar-bg: #17150f;
+      /* --placeholder-border: #353020; */
+      /* --placeholder-color: #4a4535; */
+      --sidebar-w: 360px;
+      --page-max: 900px;
+      --leading: 1.85;
+    }
+
+    /* ─────────────────────────────────────────
+       TOKENS — LIGHT (parchment)
+    ───────────────────────────────────────── */
+    html.light {
+      --bg: #f5f2eb;
+      --ink: #1a1a1a;
+      --muted: #888;
+      --muted-dim: #bbb;
+      --border: #d6d0c4;
+      --sidebar-bg: #f5f2eb;
+      /* --placeholder-border: #ccc; */
+      /* --placeholder-color: #bbb; */
+    }
+
+    /* ── LES 17 CLASSES POS ── */
+    .PROPN {
+      color: #4DC0FF;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .NOUN {
+      color: #4DC0FF;
+      cursor: pointer;
+    }
+
+    .VERB {
+      color: #FF4FD8;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .AUX {
+      color: #FF4FD8;
+      cursor: pointer;
+    }
+
+    .ADJ {
+      color: #5FD35F;
+      cursor: pointer;
+    }
+
+    .ADV {
+      color: #E67A23;
+      cursor: pointer;
+    }
+
+    .PRON {
+      color: #FF5D5C;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    /* DET & also Article */
+    .DET { 
+      color: #F1D76F; 
+      cursor: pointer;
+    }
+
+    .ADP {
+      color: #B07CFF;
+      cursor: pointer;
+    }
+
+    .CCONJ {
+      color: #3A6ED5;
+      cursor: pointer;
+    }
+
+    .SCONJ {
+      color: #3A6ED5;
+      cursor: pointer;
+    }
+
+    .PART {
+      color: #D8A63A;
+      cursor: pointer;
+    }
+
+    .INTJ {
+      color: #4DE0D2;
+      cursor: pointer;
+    }
+
+    .NUM {
+      color: #9BE564;
+      cursor: pointer;
+    }
+
+    .PUNCT {
+      color: #B0B0B0;
+      cursor: pointer;
+      font-weight: 500;
+      padding-left: 0.07rem;
+      padding-right: 0.07rem;
+    }
+
+    .SYM {
+      color: #A0A0A0;
+      cursor: pointer;
+    }
+
+    .X {
+      color: #e8dfc8;
+      opacity: 0.45;
+      cursor: pointer;
+    }
+
+    .SPACE {
+      color: transparent;
+    }
+
+    .LINK {
+      color: #3A6ED5;
+      cursor: pointer;
+      text-decoration: underline;
+      font-style: italic;
+    }
+
+    /* La barre entière */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Le fond de la barre (ton bleu sombre) */
+::-webkit-scrollbar-track {
+  background: #050C16; /* Un bleu plus sombre que ton fond "Abysse" */
+}
+
+/* La partie qui bouge (ton turquoise) */
+::-webkit-scrollbar-thumb {
+  background: #504A42; 
+  border-radius: 5px;
+  border: 1px #050C16;
+}
+
+/* Au survol pour plus de dynamisme */
+::-webkit-scrollbar-thumb:hover {
+  /* background: #00E5FF; */
+}
+
+    /* ── SIDEBAR ── */
+    #sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
+      overflow-y: auto;
+      padding: 2.5rem 1.5rem 2.5rem 1.8rem;
+      border-right: 1px solid var(--border);
+      background: #101827;
+      filter: brightness(1.10);
+      box-shadow: 5px 0 1rem -5px #ffffff06;
+      z-index: 200;
+      transform: translateX(0);
+      transition: transform 0.25s ease, background 0.3s ease, border-color 0.3s ease;
+    }
+
+    #sidebar.hidden {
+      transform: translateX(-100%);
+    }
+
+    #sidebar .site-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       SIDEBAR TABS
+    ───────────────────────────────────────── */
+    #sidebar-tabs {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.4rem;
+      cursor: pointer;
+      text-transform: lowercase;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--muted);
+      color: var(--ink);
+    }
+
+    .tab-btn.active {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    .tab-panel {
+      display: none;
+    }
+
+    .tab-panel.active {
+      display: block;
+    }
+
+    /* ─────────────────────────────────────────
+       SIDEBAR NAV
+    ───────────────────────────────────────── */
+
+    #sidebar nav ul {
+      list-style: none;
+    }
+
+    #sidebar nav ul li {
+      margin-bottom: 0.15rem;
+    }
+
+    #sidebar nav ul li a {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    #sidebar nav ul li a:hover {
+      transform: scale(1.02) translateX(-1px);
+      transition: 0.4s;
+      filter: brightness(1.7);
+    }
+
+    #sidebar nav ul li a:active {
+      transform: scale(1.0) translateX(0px);
+      transition: 0.1s;
+      filter: brightness(1);
+    }
+
+    /* Part label */
+    #sidebar nav .part-label {
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted-dim);
+      margin-top: 1.4rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    #sidebar nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      transition: color 0.15s;
+      display: block;
+      padding: 0.12rem 0;
+    }
+
+    #sidebar nav a:hover,
+    #sidebar nav a.active {
+      color: var(--ink);
+    }
+
+    /* ─────────────────────────────────────────
+       LEGEND PANEL
+    ───────────────────────────────────────── */
+    .legend-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .legend-swatch {
+      display: inline-block;
+      width: 0.65rem;
+      height: 0.65rem;
+      border-radius: 2px;
+      flex-shrink: 0;
+      position: relative;
+      top: 0.05rem;
+    }
+
+    .legend-name {
+      color: var(--ink);
+      min-width: 7rem;
+      flex-shrink: 0;
+      font-size: 0.85rem;
+    }
+
+    .legend-example {
+      font-size: 0.82rem;
+      opacity: 0.9;
+    }
+
+    /* ─────────────────────────────────────────
+       THEME TOGGLE BUTTON
+    ───────────────────────────────────────── */
+    #theme-toggle {
+      display: block;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font);
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    #theme-toggle:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    /* ─────────────────────────────────────────
+       HAMBURGER (mobile only)
+    ───────────────────────────────────────── */
+    #menu-toggle {
+      display: block;
+      position: fixed;
+      top: 1.2rem;
+      left: 1.2rem;
+      z-index: 300;
+      background: var(--muted);
+      border: 1px solid var(--muted);
+      padding: 0.4rem 0.6rem;
+      font-family: var(--font);
+      font-size: 0.75rem;
+      cursor: pointer;
+      letter-spacing: 0.1em;
+      color: var(--bg);
+      transition: background 0.3s ease, border-color 0.3s ease, left 0.25s ease;
+    }
+
+    /* ─────────────────────────────────────────
+       BACKDROP
+    ───────────────────────────────────────── */
+    #backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 150;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    #backdrop.visible {
+      opacity: 1;
+    }
+
+    /* ─────────────────────────────────────────
+       MAIN CONTENT
+    ───────────────────────────────────────── */
+    #content {
+      margin-left: var(--sidebar-w);
+      flex: 1;
+      min-height: 100vh;
+      transition: margin-left 0.25s ease;
+    }
+
+    .book-section {
+      padding: 4rem 1.4rem 5rem;
+    }
+
+    body.sidebar-hidden #content {
+      margin-left: 0;
+    }
+
+    /* Button always top-left, never moves */
+
+    /* Every section is a "page" */
+    .book-section {
+      max-width: var(--page-max);
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.3s ease;
+    }
+
+    .book-section:last-child {
+      border-bottom: none;
+    }
+
+    /* ─────────────────────────────────────────
+       COVER
+    ───────────────────────────────────────── */
+    #cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    #cover h1 {
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    #cover .byline {
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      line-height: 2;
+    }
+
+    /* ─────────────────────────────────────────
+       COPYRIGHT
+    ───────────────────────────────────────── */
+    #copyright p {
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+
+    #copyright a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color 0.15s;
+    }
+
+    #copyright a:hover {
+      color: var(--ink);
+    }
+
+    /* ─────────────────────────────────────────
+       TABLE OF CONTENTS
+    ───────────────────────────────────────── */
+    #toc h2 {
+      font-size: 2.1rem;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      margin-bottom: 2.5rem;
+      font-weight: 700;
+    }
+
+    .book-section .toc-part {
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .toc-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .toc-entry a {
+      text-decoration: none;
+      color: var(--ink);
+      font-size: 1.2rem;
+      opacity: 0.7;
+      transition: opacity 0.15s;
+      flex-shrink: 0;
+    }
+
+    .toc-entry a:hover {
+      opacity: 1;
+    }
+
+    .toc-dots {
+      flex: 1;
+      border-bottom: 0.14rem dotted var(--muted);
+      margin: 0 0.6rem 0.3rem;
+    }
+
+    .toc-page {
+      font-size: 1.1rem;
+      color: var(--muted);
+      flex-shrink: 0;
+    }
+
+    /* ─────────────────────────────────────────
+       SECTION HEADINGS
+    ───────────────────────────────────────── */
+    .section-label {
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0rem;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .book-section h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .book-section h3 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* ─────────────────────────────────────────
+       BODY TEXT
+    ───────────────────────────────────────── */
+    .book-section p {
+      font-size: 1.1rem;
+      line-height: var(--leading);
+      margin-bottom: 1.4rem;
+      font-weight: 400;
+    }
+
+    .book-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Signature / closing line */
+    .signature {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2rem;
+      text-align: right;
+      font-style: italic;
+    }
+
+    /* Part divider */
+    .part-divider {
+      min-height: 40vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+      transition: border-color 0.3s ease;
+    }
+
+    .part-divider .part-number {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .part-divider h2 {
+      font-size: 2.4rem;
+      font-weight: 700;
+    }
+
+    /* ─────────────────────────────────────────
+       PAGE BREAK DIVIDERS
+    ───────────────────────────────────────── */
+    .page-break {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 3rem 0 3rem;
+    }
+
+    .page-break::before,
+    .page-break::after {
+      content: '';
+      flex: 1;
+      height: 0.1rem;
+      background: var(--border);
+    }
+
+    .end-page-num {
+      display: block;
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    @media (max-width: 768px) {
+      #sidebar {
+        width: 100vw;
+        box-shadow: none;
+      }
+
+      #cover {
+        padding: 5rem 1.4rem 4rem;
+      }
+    }
+
+    /* ─────────────────────────────────────────
+       POS TOOLTIP (JS-driven, fixed position)
+    ───────────────────────────────────────── */
+    #pos-tooltip {
+      position: fixed;
+      pointer-events: none;
+      font-family: var(--font);
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: #CCC;
+      text-shadow: 0px 0px 10px #9999ff40;
+      white-space: nowrap;
+      z-index: 9999;
+      display: none;
+    }
+
+    .book-section {
+  /* Crée une zone de confort en haut lors du défilement auto */
+  scroll-margin-top: 0.25rem; 
+}
+
+
+:root { --bg: #101827; --ink: #D1D5DB; --sidebar-bg: #101827; }
+
+.NOUN, .PROPN     { color: #67E8F9; }                   /* Aigue-marine */ 
+.VERB, .AUX       { color: #F9A8D4; }                   /* Morganite */ 
+.ADJ              { color: #86EFAC; }                   /* Péridot */ 
+.ADV              { color: #FDBA74; }                   /* Topaze */ 
+.PRON             { color: #FCA5A5; }                   /* Quartz Rose */ 
+.NUM              { color: #BEF264; }                   /* Jade */  
+.SCONJ, .CCONJ    { color: #A5B4FC; }                   /* Iolite */ 
+.ADP              { color: #D8B4FE; }                   /* Kunzite */ 
+.DET              { color: #FDE047; }                   /* Citrine */ 
+.PART             { color: #FDA4AF; }                   /* Spinelle */
+.INTJ             { color: #93C5FD; }                   /* Saphir Clair */
+.PUNCT, .SYM, .X  { color: #D1D5DB; opacity: 0.9; }      /* Gris Platine */ 
+
+</style>
+</head>
+
+<body>
+
+    <!-- LEGEND PANEL -->
+    <div id="tab-legend" class="tab-panel">
+      <div class="legend-list">
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#67E8F9"></span>
+          <span class="legend-name">Noun</span>
+          <span class="legend-example" style="color: #67E8F9">dog, house, love</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#67E8F9"></span>
+          <span class="legend-name">Proper Noun</span>
+          <span class="legend-example" style="color:#67E8F9; font-weight:600;">Alice, London</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#F9A8D4"></span>
+          <span class="legend-name">Verb</span>
+          <span class="legend-example" style="color:#F9A8D4; font-weight:600">run, think, go</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#F9A8D4"></span>
+          <span class="legend-name">Auxiliary Verb</span>
+          <span class="legend-example" style="color:#F9A8D4">was, had, is</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#86EFAC"></span>
+          <span class="legend-name">Adjective</span>
+          <span class="legend-example" style="color:#86EFAC">happy, big, red</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FDBA74"></span>
+          <span class="legend-name">Adverb</span>
+          <span class="legend-example" style="color:#FDBA74">quickly, very</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FCA5A5"></span>
+          <span class="legend-name">Pronoun</span>
+          <span class="legend-example" style="color:#FCA5A5; font-weight: 600;">I, you, she, it</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FDE047"></span>
+          <span class="legend-name">Determiner</span>
+          <span class="legend-example" style="color:#FDE047">a, the, this</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#D8B4FE"></span>
+          <span class="legend-name">Adposition</span>
+          <span class="legend-example" style="color:#D8B4FE">in, at, to, of</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#A5B4FC"></span>
+          <span class="legend-name">Coord. Conj.</span>
+          <span class="legend-example" style="color:#A5B4FC">and, but, or</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#A5B4FC"></span>
+          <span class="legend-name">Sub. Conj.</span>
+          <span class="legend-example" style="color:#A5B4FC">because, if</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#FDA4AF"></span>
+          <span class="legend-name">Particle</span>
+          <span class="legend-example" style="color:#FDA4AF;">to, not, up</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#93C5FD"></span>
+          <span class="legend-name">Interjection</span>
+          <span class="legend-example" style="color: #93C5FD">oh, wow, hey</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background:#BEF264"></span>
+          <span class="legend-name">Number</span>
+          <span class="legend-example" style="color: #BEF264">1, 2, one, two</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background: #D1D5DB; opacity: 0.9;"></span>
+          <span class="legend-name">Punctuation</span>
+          <span class="legend-example" style="color: #D1D5DB; opacity: 0.9;">. , ! ; ?</span>
+        </div>
+
+        <div class="legend-item">
+          <span class="legend-swatch" style="background: #D1D5DB; opacity: 0.9;"></span>
+          <span class="legend-name">Symbol</span>
+          <span class="legend-example" style="color: #D1D5DB; opacity: 0.9;">$ % & @</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-swatch" style="background: #D1D5DB; opacity: 0.9;; opacity:0.9"></span>
+          <span class="legend-name">Other / Unknown</span>
+          <span class="legend-example" style="color: #D1D5DB; opacity: 0.9;">— </span>
+        </div>
+
+    </div>
+
+  </aside>
+
+  <!-- ══════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════ -->
+  <main id="content">
+
+    <!-- ── COVER ── -->
+    <section id="cover" class="book-section">
+      <h1><span class="PROPN">Alice</span> <span class="PART">’s</span> <span class="PROPN">Adventures</span> <span
+          class="ADP">in</span> <span class="PROPN">Wonderland</span> </h1>
+      <p class="byline"><span class="ADP">by</span> <span class="PROPN">Lewis</span> <span class="PROPN">Carroll</span>
+      </p>
+    </section>
+
+    <!-- ── AUTHOR'S NOTE ── -->
+    <section id="authors-note" class="book-section">
+    
+      </section>
+
+      <!-- ── TABLE OF CONTENTS ── -->
+      <section id="toc" class="book-section">
+        <h2><span class="NOUN">Contents</span></h2>
+
+        <div class="toc-entry">
+          <a href="#authors-note"><span class="NOUN">Author</span><span class="PUNCT">'</span><span
+              class="PART">s</span> <span class="NOUN">Note</span></a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">2</span></span>
+        </div>
+        <div class="toc-entry">
+          <a href="#copyright"><span class="NOUN">Copyright</span> </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">3</span></span>
+        </div>
+        <br>
+        <div class="toc-entry">
+          <a href="#ch1">
+            <span class="NOUN">Chapter</span> <span class="NUM">1</span><span class="PUNCT">:</span>
+            <span class="ADP">Down</span> <span class="DET">the</span>
+            <span class="PROPN">Rabbit</span><span class="PUNCT">-</span><span class="PROPN">Hole</span>
+          </a>
+          <span class="toc-dots"></span>
+          <span class="toc-page"><span class="NUM">8</span></span>
+        </div>
+
+
+      <!-- ── CHAPTER 1 ── -->
+      <section id="ch1" class="book-section">
+        <h4 class="section-label"><span class="PROPN">CHAPTER</span> <span class="NUM">I</span></h4>
+        <h2><span class="PROPN">Down</span> <span class="DET">the</span> <span class="PROPN">Rabbit</span><span class="PUNCT">-</span><span class="PROPN">Hole</span></h2>
+    <p>
+        <span class="PROPN">Alice</span> <span class="AUX">was</span> <span class="VERB">beginning</span> <span class="PART">to</span> <span class="VERB">get</span> <span class="ADV">very</span> <span class="ADJ">tired</span> <span class="ADP">of</span> <span class="VERB">sitting</span> <span class="ADP">by</span> <span class="PRON">her</span> <span class="NOUN">sister</span> <span class="ADP">on</span> <span class="DET">the</span> <span class="NOUN">bank</span><span class="PUNCT">,</span> <span class="CCONJ">and</span> <span class="ADP">of</span> <span class="VERB">having</span> <span class="PRON">nothing</span> <span class="PART">to</span> <span class="VERB">do</span><span class="PUNCT">:</span> 
+    </p>
+  
+      </section>
+
+  </main>
+
+<script>
+    /* ══════════════════════════════════════════════
+       SIDEBAR — single source of truth: body.sidebar-hidden
+    ══════════════════════════════════════════════ */
+    const toggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('backdrop');
+
+    // Returns true if the screen is 768px wide or less (mobile)
+    function isMobile() {
+      return window.innerWidth <= 768;
+    }
+
+    // Returns true if the sidebar is currently hidden
+    function isHidden() {
+      return document.body.classList.contains('sidebar-hidden');
+    }
+
+    // Opens the sidebar — removes the hidden class and shows the backdrop on mobile
+    function showSidebar() {
+      document.body.classList.remove('sidebar-hidden');
+      sidebar.classList.remove('hidden');
+      toggle.textContent = '✕ close';
+      if (isMobile()) {
+        // Show the dark overlay behind the sidebar on mobile
+        backdrop.style.display = 'block';
+        // requestAnimationFrame ensures the display:block is painted first
+        // before we add the 'visible' class that triggers the CSS fade-in transition
+        requestAnimationFrame(() => backdrop.classList.add('visible'));
+      }
+    }
+
+    // Closes the sidebar — adds the hidden class and hides the backdrop
+    function hideSidebar() {
+      document.body.classList.add('sidebar-hidden');
+      sidebar.classList.add('hidden');
+      toggle.textContent = '☰ menu';
+      backdrop.classList.remove('visible');
+      // We wait 250ms before display:none because the CSS fade-out transition
+      // takes 250ms — if we set display:none immediately the transition is skipped
+      setTimeout(() => { backdrop.style.display = 'none'; }, 250);
+    }
+
+    // Clicking the backdrop (dark overlay) closes the sidebar
+    backdrop.addEventListener('click', hideSidebar);
+
+    // The hamburger button toggles the sidebar open or closed
+    toggle.addEventListener('click', () => {
+      isHidden() ? showSidebar() : hideSidebar();
+    });
+
+    sidebar.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        if (isMobile()) {
+          // STEP 1 — cancel the browser's default anchor jump
+          // Without this, the browser would instantly jump to #ch1 at t=0ms
+          // while the sidebar is still open and covering the screen
+          // which means it reads the WRONG content position (sidebar open layout)
+          e.preventDefault();
+
+          // Save the href (#ch1, #ch2, etc.) before we do anything else
+          const href = link.getAttribute('href');
+
+          // STEP 2 — start closing the sidebar
+          // The CSS transition takes 250ms to slide the sidebar off screen
+          // The layout is still changing at this point — not settled yet
+          hideSidebar();
+
+          // STEP 3 — wait for the sidebar to fully close before scrolling
+          // 280ms = 250ms (sidebar transition) + 30ms (small safety buffer)
+          // After 280ms the sidebar is gone, the layout is fully settled,
+          // and the content is now at its CORRECT final position
+          setTimeout(() => {
+            const target = document.querySelector(href);
+            if (target) {
+              // STEP 4 — NOW we scroll
+              // scrollIntoView reads the position at this exact moment (t=280ms)
+              // so it sees the correct layout with the sidebar closed
+              // and lands exactly in the right place
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }, 280);
+        }
+        // On desktop we do nothing — the browser's default anchor jump works fine
+        // because the sidebar sits BESIDE the content (not on top of it)
+        // so the layout does not change vertically when the sidebar opens or closes
+      });
+    });
+
+    // On mobile the sidebar starts closed (it would cover the whole screen)
+    // On desktop the sidebar starts open (it sits beside the content)
+    if (isMobile()) {
+      hideSidebar();
+    } else {
+      showSidebar();
+    }
+
+    /* ══════════════════════════════════════════════
+       SIDEBAR TABS
+    ══════════════════════════════════════════════ */
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active from all buttons and panels first
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        // Then activate only the clicked button and its matching panel
+        btn.classList.add('active');
+        document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    /* ══════════════════════════════════════════════
+       THEME TOGGLE
+    ══════════════════════════════════════════════ */
+    const themeBtn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    // On page load, restore the theme the user chose last time
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') {
+      root.classList.add('light');
+      themeBtn.textContent = '◑ dark';
+    }
+
+    themeBtn.addEventListener('click', () => {
+      // Toggle the 'light' class on <html> — all CSS variables update automatically
+      const isLight = root.classList.toggle('light');
+      themeBtn.textContent = isLight ? '◑ dark' : '◑ parchment';
+      // Save the choice in localStorage so it persists across page reloads
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
+    /* ══════════════════════════════════════════════
+       ACTIVE NAV LINK ON SCROLL
+    ══════════════════════════════════════════════ */
+    const sections = document.querySelectorAll('section.book-section[id]');
+    const navLinks = document.querySelectorAll('#sidebar nav a');
+
+    function getActiveSection() {
+      const viewportHeight = window.innerHeight;
+
+      // Define a detection zone between 15% and 50% of the viewport height
+      // A section is "active" when it enters this zone
+      // Using percentages instead of fixed pixels makes it work on any screen size
+      const zoneTop = viewportHeight * 0.15;
+      const zoneBottom = viewportHeight * 0.50;
+
+      let best = null;
+      let bestTop = Infinity;
+
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        // Check if the section overlaps with our detection zone
+        if (rect.bottom > zoneTop && rect.top < zoneBottom) {
+          // If multiple sections are in the zone, pick the topmost one
+          if (rect.top < bestTop) {
+            bestTop = rect.top;
+            best = section;
+          }
+        }
+      });
+
+      // Fallback — if no section is in the zone (e.g. between two sections)
+      // pick the last section that has scrolled past the top of the zone
+      if (!best) {
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= zoneTop) best = section;
+        });
+      }
+
+      return best;
+    }
+
+    function updateNav() {
+      const active = getActiveSection();
+      if (!active) return;
+      const id = active.getAttribute('id');
+      // Remove active class from all links first
+      navLinks.forEach(l => l.classList.remove('active'));
+      // Then highlight only the link matching the current section
+      const activeLink = document.querySelector(`#sidebar nav a[href="#${id}"]`);
+      if (activeLink) activeLink.classList.add('active');
+    }
+
+    // Re-run on every scroll and resize event
+    // passive:true tells the browser we won't call preventDefault()
+    // which allows it to optimise scrolling performance
+    window.addEventListener('scroll', updateNav, { passive: true });
+    window.addEventListener('resize', updateNav, { passive: true });
+
+    // Run once immediately so the correct link is highlighted on page load
+    updateNav();
+
+  </script>
+
+  <!-- POS TOOLTIP -->
+  <div id="pos-tooltip"></div>
+
+  <script>
+    /* ══════════════════════════════════════════════
+       POS TOOLTIP — single floating div, zero reflow
+    ══════════════════════════════════════════════ */
+
+    // Maps each CSS class name to a human readable label shown in the tooltip
+    const posLabels = {
+      NOUN: 'Noun',
+      PROPN: 'Proper Noun',
+      VERB: 'Verb',
+      AUX: 'Auxiliary Verb',
+      ADJ: 'Adjective',
+      ADV: 'Adverb',
+      PRON: 'Pronoun',
+      DET: 'Determiner',
+      ADP: 'Adposition',
+      CCONJ: 'Coord. Conjunction',
+      SCONJ: 'Sub. Conjunction',
+      PART: 'Particle',
+      INTJ: 'Interjection',
+      NUM: 'Number',
+      PUNCT: '',        // No tooltip for punctuation
+      SYM: 'Symbol',
+      X: 'Other / Unknown',
+      LINK: 'link',
+    };
+
+    const tooltip = document.getElementById('pos-tooltip');
+    const posClasses = Object.keys(posLabels);
+
+    document.addEventListener('mouseover', e => {
+      // Find the closest parent span in case the mouse is on a child element
+      const span = e.target.closest('span');
+      if (!span) { tooltip.style.display = 'none'; return; }
+
+      // Check if this span has one of our POS classes
+      const cls = posClasses.find(c => span.classList.contains(c));
+      if (!cls) { tooltip.style.display = 'none'; return; }
+
+      // Update the tooltip text and make it visible
+      tooltip.textContent = posLabels[cls];
+      tooltip.style.display = 'block';
+
+      // Position the tooltip centered above the hovered word
+      // getBoundingClientRect gives us the word's position relative to the viewport
+      const rect = span.getBoundingClientRect();
+      const tipW = tooltip.offsetWidth;
+      const centeredLeft = rect.left + rect.width / 2 - tipW / 2;
+      // Math.max(4) prevents the tooltip from going off the left edge of the screen
+      tooltip.style.left = Math.max(4, centeredLeft) + 'px';
+      tooltip.style.top = (rect.top - 13) + 'px';
+    });
+
+    document.addEventListener('mouseout', e => {
+      const span = e.target.closest('span');
+      if (!span) return;
+      // Hide the tooltip when the mouse leaves a POS span
+      const cls = posClasses.find(c => span.classList.contains(c));
+      if (cls) tooltip.style.display = 'none';
+    });
+  </script>
+
+</body>
+
+</html>

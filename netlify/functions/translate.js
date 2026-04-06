@@ -1,12 +1,8 @@
 exports.handler = async (event) => {
   try {
-    const { text, word, context } = JSON.parse(event.body);
-    const apiToken = process.env.HF_TOKEN;
+    const { text } = JSON.parse(event.body);
+    const apiToken = process.env.HF_TOKEN; // Netlify ira chercher ton token tout seul ici
 
-    // If a single word was clicked, translate it in context — otherwise translate the selection as-is
-    const inputText = word && context
-      ? `Translate the word "${word}" as used in this sentence: "${context}"`
-      : text;
 
     const response = await fetch("https://router.huggingface.co/hf-inference/models/Helsinki-NLP/opus-mt-en-fr", {
       headers: { 
@@ -14,7 +10,7 @@ exports.handler = async (event) => {
         "Content-Type": "application/json" 
       },
       method: "POST",
-      body: JSON.stringify({ inputs: inputText }),
+      body: JSON.stringify({ inputs: text }),
     });
 
     const result = await response.json();
